@@ -6,3 +6,6 @@ public: true
 ---
 
 Testing if I can insert an image :
+![alt text][image]
+
+[image]: ./images/test.png "test image"

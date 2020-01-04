@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node .",
     "start": "serve ./public"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/egovelox/ssg.git"
