@@ -7,7 +7,7 @@ public: true
 
 Observing an old tradition in web development...
 
-```
+``` javascript
 const greeting = 'Hello World';
 console.log(greeting);
 ```
