@@ -3,7 +3,7 @@
 {% block body %}
   <article>
     <header>
-      <h1 style="text-align: center;">{{ title }}</h1>
+      <h1>{{ title }}</h1>
     </header>
     <div class="markdown-body">
       {{ body | safe }}
@@ -11,5 +11,9 @@
   </article>
 
   <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  <script>window.hljs.initHighlightingOnLoad();</script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 {% endblock %}
