@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang ="en">
+  <head>
+    
+    <meta charset='utf-8'>
+    <meta description="traditional post">
+    <title>Footer en HTML</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    
+  </head>
+  <body>
+  <nav>
+    <ul id="navbar">
+      <li class="nav-item">
+      <svg id = "brand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><defs><style>.cls-1{font-size:41px;fill:#fff;font-family:AmericanTypewriter, American Typewriter;}.cls-2{letter-spacing:-0.03em;}</style></defs><title>Fichier 1</title><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><rect width="245" height="245"/><text class="cls-1" transform="translate(57.7 130)">EGO<tspan x="0" y="49.2">VEL</tspan><tspan class="cls-2" x="83.56" y="49.2">O</tspan><tspan x="109.02" y="49.2">X</tspan></text></g></g></svg>
+      </li>
+
+      <li class="nav-item">
+        <a href="./index.html">&#9783; Articles</a>
+      </li>
+      <li class="nav-item">
+        <a href="./index.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="./index.html">Nugae</a>
+      </li>
+    </ul>
+  </nav>
+    
+  <article>
+    <header>
+      <h1>Footer en HTML</h1>
+    </header>
+    <div class="markdown-body">
+      <p>Il est relativement difficile de placer correctement un footer sur une page HTML.
+L'arrivée de l'unité css vh a pu considérablement simplifier les choses.
+Voilà simplement ce qu'il faudra tâcher de retenir : </p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span>{
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+}
+<span class="hljs-selector-tag">body</span> 
+{
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">position</span>: relative;
+}
+<span class="hljs-comment">/* 
+Dans le dernier enfant du body, on anticipe la hauteur du footer :
+*/</span>
+<span class="hljs-selector-tag">article</span>
+{
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">2.5rem</span>;    
+}
+
+<span class="hljs-selector-id">#footer</span>
+{
+    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">1px</span> solid lightgray;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
+
+  </body>
+  <footer id="footer">&#128736; Jan 2020 with &#128420;</footer>
+</html>

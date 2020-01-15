@@ -4,7 +4,7 @@
     
     <meta charset='utf-8'>
     <meta description="traditional post">
-    <title>BASICS: Comment réaliser un script bash</title>
+    <title>Scripting shell sous UNIX</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
@@ -33,11 +33,32 @@
     
   <article>
     <header>
-      <h1>BASICS: Comment réaliser un script bash</h1>
+      <h1>Scripting shell sous UNIX</h1>
     </header>
     <div class="markdown-body">
-      <p>Voilà l'en-tête indispensable à tout script bash</p>
+      <p>L'écriture d'un script shell sous UNIX passe invariablement par quelques étapes indispensables. Cet article permettra de les rappeler clairement.</p>
+<h3 id="mise-en-place">Mise en place</h3>
+<p>Créons un répertoire /bin dans notre dossier d'utilisateur, et le fichier dans lequel nous écrirons notre script:</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> mkdir <span class="hljs-variable">$HOME</span>/bin</span>
+<span class="hljs-meta">$</span><span class="bash"> touch <span class="hljs-variable">$HOME</span>/bin/monScript.sh</span></code></pre>
+<h3 id="au-commencement-était-le-shebang">Au commencement était le SHEBANG</h3>
+<p>Le SHEBANG permet d'indiquer le shell que l'on choisit pour exécuter notre script.</p>
+<p>, nommé monScript.sh, nous commencerons donc par y écrire le SHEBANG, indiquant ici que l'on choisit le shell "bash".</p>
 <pre><code class="hljs language-bash"><span class="hljs-meta">#!/bin/bash</span></code></pre>
+<h3 id="le-contenu-du-script">Le contenu du script</h3>
+<p>Evidemment notre script aura un contenu, qui importe peu ici. Nous plaçons simplement un echo:</p>
+<pre><code class="hljs language-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"Le script a bien été exécuté"</span></code></pre>
+<h3 id="les-droits-déxécution">Les droits d'éxécution</h3>
+<p>Sous UNIX, un script bash ne pourra être exécuté par l'utilisateur, que si ce dernier possède bien les droits d'éxécution sur le script. </p>
+<p>Donnons-nous donc les droits d'éxécution sur notre script, en envoyant dans notre console (pas dans le script lui-même) la commande suivante :</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> sudo chmod 755 /chemin/vers/monScript.sh</span></code></pre>
+<h3 id="le-lancement-du-script">Le lancement du script</h3>
+<p>Soit nous le lançons depuis le repértoire où il se trouve:</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /chemin/vers/monScript.sh &#x26;&#x26; ./monScript.sh</span></code></pre>
+<p>Soit nous le lançons sans considération du répertoire; nous devrons alors auparavant inclure le répertoire du script dans notre variable d'environnement PATH : </p>
+<pre><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">export</span> PATH=PATH:<span class="hljs-variable">$HOME</span>/bin</span>
+<span class="hljs-meta">$</span><span class="bash"> monScript.sh</span></code></pre>
 
     </div>
   </article>
