@@ -29,10 +29,24 @@ a
 }
 #navbar
 {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: calc(100% - 150px);
     margin: 0;
     padding: 0;
+    min-width: 234px;
 }
-.nav-item, .nav-brand
+.nav-item
+{
+    display: inline-block;
+    margin-right: 1rem;
+    list-style: none;
+    vertical-align: middle;
+    padding: 3px;
+    border-bottom: 3px solid #bbaa99;
+}
+
+.nav-brand
 {
     display: inline-block;
     margin-right: 1rem;
@@ -143,10 +157,6 @@ About Page
     {
     width: 60px;
     height: 60px;
-    }
-    .nav-brand
-    {
-        display: block;
     }
     #indexList 
     {
