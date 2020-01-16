@@ -50,7 +50,6 @@ a
 {
     display: inline-block;
     margin-right: 1rem;
-    list-style: none;
     vertical-align: middle;
     padding: 3px;
     border-bottom: 3px solid #bbaa99;
@@ -146,6 +145,10 @@ About Page
     vertical-align: middle;
 }
 
+/* =============================================
+Media Queries
+==============================================*/
+
 @media (max-width: 680px) 
 {
     body 
@@ -155,41 +158,41 @@ About Page
     }
     #brand 
     {
-    width: 60px;
-    height: 60px;
+        width: 60px;
+        height: 60px;
     }
     #indexList 
     {
-    margin-top: 40px;
+        margin-top: 40px;
     }
     .indexItem 
     {
-    list-style: none;
-    margin-bottom: 10px;
+        list-style: none;
+        margin-bottom: 10px;
     }
     .indexPostDate 
     {
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 15px;
-    color: coral;
-    padding: 1px;
+        background-color: black;
+        border: 1px solid black;
+        border-radius: 15px;
+        color: coral;
+        padding: 1px;
     }
     .indexPostTitle 
     {
-    margin-left: 2px;
-    font-size: 1rem;
+        margin-left: 8px;
+        font-size: 1rem;
 
     }
     #contact
-{
-    display: block;
-    margin: auto;
-    margin-top: 30px;
-    width: auto;
-    border: 4px solid black;
-    border-radius: 15px;
-    padding-right: 3px;
-    padding-left: 6px;
-}
+    {
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        width: auto;
+        border: 4px solid black;
+        border-radius: 15px;
+        padding-right: 3px;
+        padding-left: 6px;
+    }
 }
