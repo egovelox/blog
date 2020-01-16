@@ -21,6 +21,10 @@ const getFiles = async (dirPath, fileExt = '') => {
         .filter(dirent =>
             fileExt.length ? dirent.name.toLowerCase().endsWith(fileExt) : true
             )
+        // exclude permanent pages
+        .filter(dirent =>
+            dirent.name !== "about.html"
+            )
         .map(dirent => dirent.name)
     );
 }
