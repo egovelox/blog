@@ -33,10 +33,10 @@ Evidemment notre script aura un contenu, mais il importe peu ici. Nous plaçons 
 echo "Le script a bien été exécuté"
 ```
 
-### Les droits d'éxécution
-Sous UNIX, un script bash ne pourra être exécuté par l'utilisateur, que si ce dernier possède bien les droits d'éxécution sur le script. 
+### Les droits d'exécution
+Sous UNIX, un script bash ne pourra être exécuté par l'utilisateur, que si ce dernier possède bien les droits d'exécution sur le script. 
 
-Donnons-nous donc les droits d'éxécution sur notre script, en envoyant dans notre console (pas dans le script lui-même) la commande suivante :
+Donnons-nous donc les droits d'exécution sur notre script, en envoyant dans notre console (pas dans le script lui-même) la commande suivante :
 
 ```shell
 $ sudo chmod 755 /chemin/vers/monScript.sh

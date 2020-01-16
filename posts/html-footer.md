@@ -19,7 +19,8 @@ body
     position: relative;
 }
 /* 
-Dans le dernier enfant du body, on anticipe la hauteur du footer :
+Dans le block qui précède le footer (ici article), 
+on anticipe l'espacement du footer :
 */
 article
 {
