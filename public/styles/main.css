@@ -102,6 +102,18 @@ pre{
     background-color: #1d1f21;
 }
 
+/* =============================================
+About Page
+==============================================*/
 
+#contact
+{
+    padding-bottom: 2.5rem;    /* Footer height */
+}
 
+#github{
+    width: 4%;
+    padding-right: 8px;
+    vertical-align: middle;
+}
 
