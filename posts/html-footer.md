@@ -20,7 +20,7 @@ body
 }
 /* 
 Dans le block qui précède le footer (ici article), 
-on anticipe l'espacement du footer :
+on anticipe la hauteur du footer, car ce dernier sera en position absolute !
 */
 article
 {
