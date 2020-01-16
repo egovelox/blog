@@ -19,15 +19,14 @@ $ touch $HOME/bin/monScript.sh
 
 ### Au commencement était le SHEBANG
 Le SHEBANG permet d'indiquer le shell que l'on choisit pour exécuter notre script.
-
-, nommé monScript.sh, nous commencerons donc par y écrire le SHEBANG, indiquant ici que l'on choisit le shell "bash".
+Nous indiquons ici que l'on choisit le shell "bash".
 
 ```bash
 #!/bin/bash
 ```
 
 ### Le contenu du script
-Evidemment notre script aura un contenu, qui importe peu ici. Nous plaçons simplement un echo:
+Evidemment notre script aura un contenu, mais il importe peu ici. Nous plaçons simplement un 'echo':
 
 ```bash
 #!/bin/bash
@@ -45,13 +44,13 @@ $ sudo chmod 755 /chemin/vers/monScript.sh
 
 
 ### Le lancement du script
-Soit nous le lançons depuis le repértoire où il se trouve:
+Soit le lancer depuis le repértoire où il se trouve:
 
 ```shell
 $ cd /chemin/vers/monScript.sh && ./monScript.sh
 ```
 
-Soit nous le lançons sans considération du répertoire; nous devrons alors auparavant inclure le répertoire du script dans notre variable d'environnement PATH : 
+Soit le lancer sans considération du répertoire; nous devrons alors auparavant inclure le répertoire du script dans notre variable d'environnement PATH : 
 
 ```shell
 $ export PATH=PATH:$HOME/bin
