@@ -23,6 +23,11 @@ body
     min-height: 100vh;
     position: relative;
 }
+nav
+{
+    display: flex;
+    justify-content: space-between;
+}
 a 
 {
     color: inherit;
@@ -30,21 +35,21 @@ a
 }
 #navbar
 {
-    display: inline-flex;
-    justify-content: flex-end;
-    width: calc(100% - 150px);
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
-    min-width: 234px;
+
 }
 .nav-item
 {
-    display: inline-block;
+
     margin-right: 1rem;
     list-style: none;
-    vertical-align: middle;
     padding: 3px;
     border-bottom: 3px solid #bbaa99;
+    vertical-align: middle;
+
 }
 
 .nav-brand

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang ="en">
+  <head>
+    
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta description="traditional post">
+    <title>javascript ES6: export/import </title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    
+  </head>
+  <body>
+  <nav>
+        <div class="nav-brand">
+            <svg id = "brand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><defs><style>.cls-1{font-size:41px;fill:#fff;font-family:AmericanTypewriter, American Typewriter;}.cls-2{letter-spacing:-0.03em;}</style></defs><title>egovelox</title><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><rect width="245" height="245"/><text class="cls-1" transform="translate(57.7 130)">EGO<tspan x="0" y="49.2">VEL</tspan><tspan class="cls-2" x="83.56" y="49.2">O</tspan><tspan x="109.02" y="49.2">X</tspan></text></g></g></svg>
+        </div>
+        <ul id="navbar">
+          <li class="nav-item">
+            <a href="./index.html">&#9783; Articles</a>
+          </li>
+          <li class="nav-item">
+            <a href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html">Nugae</a>
+          </li>
+        </ul>
+    </nav>
+    
+  <article>
+    <header>
+      <h1>javascript ES6: export/import </h1>
+    </header>
+    <div class="markdown-body">
+      <p>En langage javascript, la fonctionnalité d'exportation / importation permet de partitionner le code sur plusieurs fichiers. On travaille ainsi de façon modulaire, en liant l'un avec l'autre deux (ou plusieurs) fichiers .js appelés modules.</p>
+<h3 id="mise-en-place">Mise en place</h3>
+<p>Créeons dans notre espace de travail un dossier /src avec deux fichiers distincts, module1.js et module2.js</p>
+<pre><code class="hljs language-shell">cd monEspace
+mkdir src/
+touch src/module1.js &#x26;&#x26; touch src/module2.js</code></pre>
+<h3 id="exportation-en-es5">Exportation en ES5</h3>
+<p>En ES5, avant l'arrivée de ES6 (ES2015), on trouve la syntaxe suivante (encore présente un peu partout, par exemple dans NodeJS) :</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//module.js</span>
+<span class="hljs-built_in">module</span>.exports = {<span class="hljs-attr">msg</span> : <span class="hljs-string">"hello"</span>, <span class="hljs-attr">lang</span>: <span class="hljs-string">"english"</span>}
+
+<span class="hljs-comment">//main.js</span>
+<span class="hljs-keyword">var</span> englishGreeting = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./module.js'</span>);
+<span class="hljs-built_in">console</span>.log(englishGreeting.msg)</code></pre>
+<h3 id="es6-lexportation-default--export-default">ES6 l'exportation "default" : export default</h3>
+<p>Elle permet d'exporter des parties de code en les nommant par défaut, i.e d'un nom qu'il n'est pas nécessaire de respecter lors de l'importation.
+Ce nom par défaut peut même être omis, si l'on y tient : c'est utile pour le cas de simples valeurs, comme des tableaux, des objets, ou pour le cas de fonctions anonymes, ou même de classes anonymes : pour tout cela, on pourra exporter sans nom, et nommer seulement lors de l'importation.</p>
+<h4 id="limitation">Limitation</h4>
+<p>L'exportation "default", dans chaque fichier .js, est forcément unique.</p>
+<h4 id="exemple-1">Exemple 1</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// module2.js</span>
+<span class="hljs-comment">// on exporte un objet nommé, par défault, "greeting"</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> greeting = {<span class="hljs-attr">msg</span> : <span class="hljs-string">"hello"</span>, <span class="hljs-attr">lang</span>: <span class="hljs-string">"eng"</span>}
+
+<span class="hljs-comment">// module1.js</span>
+<span class="hljs-comment">// on importe l'objet "greeting" en le renommant "englishGreeting".</span>
+<span class="hljs-keyword">import</span> englishGreeting <span class="hljs-keyword">from</span> <span class="hljs-string">'module2.js'</span>
+<span class="hljs-keyword">const</span> greeting = <span class="hljs-function"><span class="hljs-params">()</span> =></span> {
+    <span class="hljs-built_in">console</span>.log(englishGreeting);
+}</code></pre>
+<h4 id="exemple-2">Exemple 2</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// module2.js</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"module2.js exported"</span>)
+<span class="hljs-comment">// on exporte un objet sans nom</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<span class="hljs-attr">msg</span> : <span class="hljs-string">"hello"</span>, <span class="hljs-attr">lang</span>: <span class="hljs-string">"eng"</span>}
+
+<span class="hljs-comment">// module1.js</span>
+<span class="hljs-comment">// on importe l'objet anonyme en lui donnant un nom.</span>
+<span class="hljs-keyword">import</span> englishGreeting <span class="hljs-keyword">from</span> <span class="hljs-string">'module2.js'</span>
+<span class="hljs-keyword">const</span> greeting = <span class="hljs-function"><span class="hljs-params">()</span> =></span> {
+    <span class="hljs-built_in">console</span>.log(englishGreeting);
+}</code></pre>
+<h3 id="es6-lexportation-nommée">ES6 l'exportation "nommée"</h3>
+<p>... coming soon</p>
+
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
+
+    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+  </body>
+</html>
