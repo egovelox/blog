@@ -20,10 +20,10 @@ touch src/module1.js && touch src/module2.js
 En ES5, avant l'arrivée de ES6 (ES2015), on trouve la syntaxe suivante (encore présente un peu partout, par exemple dans NodeJS) :
 
 ```javascript
-//module.js
+//module2.js
 module.exports = {msg : "hello", lang: "english"}
 
-//main.js
+//module1.js
 var englishGreeting = require('./module.js');
 console.log(englishGreeting.msg)
 ```

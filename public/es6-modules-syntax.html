@@ -43,10 +43,10 @@ mkdir src/
 touch src/module1.js &#x26;&#x26; touch src/module2.js</code></pre>
 <h3 id="exportation-en-es5">Exportation en ES5</h3>
 <p>En ES5, avant l'arrivée de ES6 (ES2015), on trouve la syntaxe suivante (encore présente un peu partout, par exemple dans NodeJS) :</p>
-<pre><code class="hljs language-javascript"><span class="hljs-comment">//module.js</span>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//module2.js</span>
 <span class="hljs-built_in">module</span>.exports = {<span class="hljs-attr">msg</span> : <span class="hljs-string">"hello"</span>, <span class="hljs-attr">lang</span>: <span class="hljs-string">"english"</span>}
 
-<span class="hljs-comment">//main.js</span>
+<span class="hljs-comment">//module1.js</span>
 <span class="hljs-keyword">var</span> englishGreeting = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./module.js'</span>);
 <span class="hljs-built_in">console</span>.log(englishGreeting.msg)</code></pre>
 <h3 id="es6-lexportation-default--export-default">ES6 l'exportation "default" : export default</h3>
