@@ -1,14 +1,13 @@
 ---
-title: "Ajax canevas"
+title: "Ajax basics"
 description: "traditional post"
 date: "2020-01-22"
 public: true
 ---
 
-Here is the classic AJAX process: 
+XMLHttpRequest (aka AJAX) is a built-in browser object that allows to make HTTP requests in JavaScript. Here is the classic AJAX process: 
 
 ```javascript
- 
     var req = new XMLHttpRequest();
     
     // onreadystatechange() will be invoked 
