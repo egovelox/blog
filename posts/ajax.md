@@ -15,7 +15,7 @@ XMLHttpRequest (aka AJAX) is a built-in browser object that allows to make HTTP 
     // i.e 4 times in most cases.
     req.onreadystatechange = function()
     {
-        // N.B this is the 'req' object
+        // N.B the 'this' keyword still represents the 'req' object
         // readyState 0: request not initialized
         // readyState 1: server connection established
         // readyState 2: request received 
