@@ -41,8 +41,8 @@
 <pre><code class="hljs language-shell">cd monEspace
 mkdir src/
 touch src/module1.js &#x26;&#x26; touch src/module2.js</code></pre>
-<h3 id="exportation-en-es5">Exportation en ES5</h3>
-<p>En ES5, avant l'arrivée de ES6 (ES2015), on trouve la syntaxe suivante (encore présente un peu partout, par exemple dans NodeJS) :</p>
+<h3 id="exportation-en-contexte-nodejs">Exportation en contexte NodeJS</h3>
+<p>NodeJS utilise le format de CommonJS, qui prévoit la syntaxe suivante :</p>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">//module2.js</span>
 <span class="hljs-built_in">module</span>.exports = {<span class="hljs-attr">msg</span> : <span class="hljs-string">"hello"</span>, <span class="hljs-attr">lang</span>: <span class="hljs-string">"english"</span>}
 
@@ -51,10 +51,10 @@ touch src/module1.js &#x26;&#x26; touch src/module2.js</code></pre>
 <span class="hljs-built_in">console</span>.log(englishGreeting.msg)</code></pre>
 <h3 id="es6-lexportation-default--export-default">ES6 l'exportation "default" : export default</h3>
 <p>Elle permet d'exporter des parties de code en les nommant par défaut, i.e d'un nom qu'il n'est pas nécessaire de respecter lors de l'importation.
-Ce nom par défaut peut même être omis, si l'on y tient : c'est utile pour le cas de simples valeurs, comme des tableaux, des objets, ou pour le cas de fonctions anonymes, ou même de classes anonymes : pour tout cela, on pourra exporter sans nom, et nommer seulement lors de l'importation.</p>
+Ce nom par défaut peut même être omis : c'est utile pour le cas de simples valeurs, comme des tableaux, des objets, ou pour le cas de fonctions anonymes, ou même de classes anonymes : pour tout cela, on pourra exporter sans nom, et nommer seulement lors de l'importation.</p>
 <h4 id="limitation">Limitation</h4>
 <p>L'exportation "default", dans chaque fichier .js, est forcément unique.</p>
-<h4 id="exemple-1">Exemple 1</h4>
+<h4 id="exemple-1-en-renommant">Exemple 1 (en renommant)</h4>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// module2.js</span>
 <span class="hljs-comment">// on exporte un objet nommé, par défault, "greeting"</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> greeting = {<span class="hljs-attr">msg</span> : <span class="hljs-string">"hello"</span>, <span class="hljs-attr">lang</span>: <span class="hljs-string">"eng"</span>}
@@ -65,9 +65,8 @@ Ce nom par défaut peut même être omis, si l'on y tient : c'est utile pour le 
 <span class="hljs-keyword">const</span> greeting = <span class="hljs-function"><span class="hljs-params">()</span> =></span> {
     <span class="hljs-built_in">console</span>.log(englishGreeting);
 }</code></pre>
-<h4 id="exemple-2">Exemple 2</h4>
+<h4 id="exemple-2-en-baptisant">Exemple 2 (en "baptisant")</h4>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// module2.js</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"module2.js exported"</span>)
 <span class="hljs-comment">// on exporte un objet sans nom</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<span class="hljs-attr">msg</span> : <span class="hljs-string">"hello"</span>, <span class="hljs-attr">lang</span>: <span class="hljs-string">"eng"</span>}
 

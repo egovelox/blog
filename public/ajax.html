@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta description="traditional post">
-    <title>Ajax canevas</title>
+    <title>Ajax basics</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
     <link rel="stylesheet" href="./styles/main.css">
 
@@ -32,19 +32,18 @@
     
   <article>
     <header>
-      <h1>Ajax canevas</h1>
+      <h1>Ajax basics</h1>
     </header>
     <div class="markdown-body">
-      <p>Here is the classic AJAX process: </p>
-<pre><code class="hljs language-javascript"> 
-    <span class="hljs-keyword">var</span> req = <span class="hljs-keyword">new</span> XMLHttpRequest();
+      <p>XMLHttpRequest (aka AJAX) is a built-in browser object that allows to make HTTP requests in JavaScript. Here is the classic AJAX process: </p>
+<pre><code class="hljs language-javascript">    <span class="hljs-keyword">var</span> req = <span class="hljs-keyword">new</span> XMLHttpRequest();
     
     <span class="hljs-comment">// onreadystatechange() will be invoked </span>
     <span class="hljs-comment">// each time the event 'readystate has changed' occurs</span>
     <span class="hljs-comment">// i.e 4 times in most cases.</span>
     req.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)
     </span>{
-        <span class="hljs-comment">// N.B this is the 'req' object</span>
+        <span class="hljs-comment">// N.B the 'this' keyword still represents the 'req' object</span>
         <span class="hljs-comment">// readyState 0: request not initialized</span>
         <span class="hljs-comment">// readyState 1: server connection established</span>
         <span class="hljs-comment">// readyState 2: request received </span>

@@ -16,8 +16,8 @@ mkdir src/
 touch src/module1.js && touch src/module2.js
 ```
 
-### Exportation en ES5
-En ES5, avant l'arrivée de ES6 (ES2015), on trouve la syntaxe suivante (encore présente un peu partout, par exemple dans NodeJS) :
+### Exportation en contexte NodeJS
+NodeJS utilise le format de CommonJS, qui prévoit la syntaxe suivante :
 
 ```javascript
 //module2.js
@@ -30,11 +30,11 @@ console.log(englishGreeting.msg)
 
 ### ES6 l'exportation "default" : export default
 Elle permet d'exporter des parties de code en les nommant par défaut, i.e d'un nom qu'il n'est pas nécessaire de respecter lors de l'importation.
-Ce nom par défaut peut même être omis, si l'on y tient : c'est utile pour le cas de simples valeurs, comme des tableaux, des objets, ou pour le cas de fonctions anonymes, ou même de classes anonymes : pour tout cela, on pourra exporter sans nom, et nommer seulement lors de l'importation.
+Ce nom par défaut peut même être omis : c'est utile pour le cas de simples valeurs, comme des tableaux, des objets, ou pour le cas de fonctions anonymes, ou même de classes anonymes : pour tout cela, on pourra exporter sans nom, et nommer seulement lors de l'importation.
 #### Limitation
 L'exportation "default", dans chaque fichier .js, est forcément unique.
 
-#### Exemple 1
+#### Exemple 1 (en renommant)
 ```javascript
 // module2.js
 // on exporte un objet nommé, par défault, "greeting"
@@ -48,10 +48,9 @@ const greeting = () => {
 }
 ```
 
-#### Exemple 2
+#### Exemple 2 (en "baptisant")
 ```javascript
 // module2.js
-console.log("module2.js exported")
 // on exporte un objet sans nom
 export default {msg : "hello", lang: "eng"}
 
