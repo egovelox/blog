@@ -33,3 +33,13 @@ int main()
     return 0;
 }
 ```
+
+Result after execution : 
+
+```
+egovelox$ ./callocExample
+array address: 0x7fd64ac01820
+array[0] : 1.100000
+array[1] : 2.210000
+array[2] : 5.654234
+```
