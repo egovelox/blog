@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang ="en">
+  <head>
+    
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta description="traditional post">
+    <title>calloc example</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    
+  </head>
+  <body>
+  <nav>
+        <div class="nav-brand">
+            <svg id = "brand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><defs><style>.cls-1{font-size:41px;fill:#fff;font-family:AmericanTypewriter, American Typewriter;}.cls-2{letter-spacing:-0.03em;}</style></defs><title>egovelox</title><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><rect width="245" height="245"/><text class="cls-1" transform="translate(57.7 130)">EGO<tspan x="0" y="49.2">VEL</tspan><tspan class="cls-2" x="83.56" y="49.2">O</tspan><tspan x="109.02" y="49.2">X</tspan></text></g></g></svg>
+        </div>
+        <ul id="navbar">
+          <li class="nav-item">
+            <a href="./index.html">&#9783; Articles</a>
+          </li>
+          <li class="nav-item">
+            <a href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html">Nugae</a>
+          </li>
+        </ul>
+    </nav>
+    
+  <article>
+    <header>
+      <h1>calloc example</h1>
+    </header>
+    <div class="markdown-body">
+      <p>When you need to allocate an array during runtime.</p>
+<pre><code class="hljs language-c">
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&#x3C;stdio.h></span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">double</span> *<span class="hljs-built_in">array</span>;
+    <span class="hljs-keyword">int</span> i;
+    
+<span class="hljs-comment">/* 
+/*Allocation of 3 * 8 bytes, for 3 double numbers.
+/*calloc() returns an address of type void* 
+*/</span>
+    <span class="hljs-built_in">array</span> = (<span class="hljs-keyword">double</span>*) <span class="hljs-built_in">calloc</span>(<span class="hljs-number">3</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">double</span>));
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"array address: %p\n"</span>, <span class="hljs-built_in">array</span>);
+
+    <span class="hljs-built_in">array</span>[<span class="hljs-number">0</span>] = <span class="hljs-number">1.1</span>;
+    <span class="hljs-built_in">array</span>[<span class="hljs-number">1</span>] = <span class="hljs-number">2.21</span>;
+    arrat[<span class="hljs-number">3</span>] = <span class="hljs-number">5.654234</span>;
+
+    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>; i&#x3C;<span class="hljs-number">3</span>; i++)
+    {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"array[%d] : %6.lf"</span>, i, <span class="hljs-built_in">array</span>[i]);
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
+
+    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+  </body>
+</html>
