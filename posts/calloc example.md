@@ -36,7 +36,7 @@ int main()
 
 Result after execution : 
 
-```
+```bash
 egovelox$ ./callocExample
 array address: 0x7fd64ac01820
 array[0] : 1.100000
