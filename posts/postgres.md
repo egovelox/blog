@@ -13,7 +13,7 @@ Here is how to configure a PSQL database on a CentOS server.
 yum install postgresql-server postgresql-contrib
 ```
 
-## Start configuration
+## Getting the thing started
 
 The first time you will try to run postgresql, you'll get an error !!
 
@@ -69,4 +69,10 @@ Success. You can now start the database server using:
 
     /usr/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
 
+```
+
+Now you can run the latter, as postgres user, or more commonly, as you are
+
+```bash
+systemctl start postgresql && systemctl enable postgresql
 ```
