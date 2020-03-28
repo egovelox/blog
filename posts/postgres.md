@@ -79,8 +79,9 @@ To start the server as it is, now you can run the latter (adding &), as postgres
 ```bash
 systemctl start postgresql && systemctl enable postgresql
 ```
-then checking the first logfile
-```
+
+then checking the "newborn" logfile in /var/lib/pgsql
+```bash
 [postgres@egovelox ~]$ ls
 backups  data  initdb_postgresql.log  logfile
 [postgres@egovelox ~]$ cat logfile
@@ -93,12 +94,14 @@ backups  data  initdb_postgresql.log  logfile
 ```
 ## Configure the server
 
-CentOS 8, in my case, provided firewalld by default. So first of all, open PSQL default port (5432) : 
+My version of CentOS 8 (it might not always be so) provided firewalld by default. So first of all, open PSQL default port (5432) : 
 
 ```bash
 sudo firewalld-cmd --zone=public --permanent --add-port 5432/tcp 
 sudo firewall-cmd --reload
 ```
+
+
 
 
 
