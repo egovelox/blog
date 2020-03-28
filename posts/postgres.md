@@ -119,7 +119,14 @@ listen_addresses = '*'                  # what IP address(es) to listen on;
                                         # (change requires restart)
 ```
 
-Let's assume here that our machine runs behind a router, with a static address (e.g 192.168.1.2).
+Be aware, here PGSQL needs a restart : 
+
+```bash
+sudo systemctl restart postgresql
+```
+
+
+Let's now assume that our machine runs behind a router, with a static address (e.g 192.168.1.2).
 Since PGSQL only gets a dialog with the outside passing through the router/gateway 192.168.1.1
 
 in postgresql.conf you can configure a new "host" line, like this, using our postgres user, the router address and the md5 method : 
@@ -139,6 +146,15 @@ host    all             all             ::1/128                 ident
 local   replication     all                                     peer
 host    replication     all             127.0.0.1/32            md5
 host    replication     all             ::1/128                 md5
+```
+
+And its'all done ! For safety, in your router, you'll be wise to map a different port to 5432. Now get remote access to your databases with the following parameters : 
+
+```bash
+user: postgres
+passwd : the pass you chose
+address : your public IP
+port : the port you chose. 
 ```
 
 
