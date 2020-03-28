@@ -37,7 +37,7 @@ service postgresql initdb
 
 You will then have to switch user...
 ```bash
-sudo su postgres
+sudo su - postgres
 ```
 
 to be able to check the result in /var/lib/pgsql :
