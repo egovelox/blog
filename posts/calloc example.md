@@ -1,5 +1,5 @@
 ---
-title: "calloc example"
+title: "A calloc example"
 description: "traditional post"
 date: "2020-02-15"
 public: true
