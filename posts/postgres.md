@@ -26,22 +26,27 @@ sudo service postgresql start
  Use "/usr/bin/postgresql-setup --initdb"
  to initialize the database cluster.
 ```
-This can be explained : a script was run during the install, and, among other tasks created a /var/lib/pgsql owned by the user postgres.
+This can be explained : a script was run during the install, and, among other tasks, **it created a /var/lib/pgsql owned by the user postgres**.
 
-It did not create a cluster though - an instance of PSQL allows you to manage multiple databases in a so-called cluster - and that's why the /var/lib/pgsql/data folder is still empty.
+It did not create a cluster though - a single instance of PSQL allows you to manage multiple databases in a so-called cluster - and that's why the /var/lib/pgsql/data folder is still empty.
 
-So first issue the command as sudo :
+So always first issue this command as sudo :
 ```bash
 service postgresql initdb
 ```
 
-You can now switch user...
+You can now switch user and get directly the psql command-line...
 ```bash
 sudo su - postgres psql
 ```
-and query :
+You can issue the query :
 ```sql
 SELECT version();
+```
+
+and this other : 
+```sql
+SELECT * FROM pg_roles;
 ```
 You're in. Now be safe, just **add a password for the postgres user** :
 
@@ -49,7 +54,7 @@ You're in. Now be safe, just **add a password for the postgres user** :
 ALTER USER postgres PASSWORD 'myPassword';
 ```
 
-Ok, let's quit psql (issue command \q) and now check the result of this whole init process. Go in /var/lib/pgsql :
+Let's quit psql (issue command \q) and now check the result of **this init process**. Go in /var/lib/pgsql :
 ```bash
 [postgres@egovelox ~]$ ls
 backups  data  initdb_postgresql.log
@@ -80,22 +85,24 @@ Success. You can now start the database server using:
 
 ```
 
-To start the server as it is, now you can, as user postgres, run the latter (adding &) , or just from your normal account :
+To start the PGSQL server, now you can either : 
+1. as user postgres, run the latter (adding &) 
+2. or just prefer, from your normal account :
 ```bash
 sudo systemctl start postgresql && systemctl enable postgresql
 ```
 
-then checking the "newborn" logfile in /var/lib/pgsql
+Fell free to check the "newborn" logfile in /var/lib/pgsql
 ```bash
 [postgres@egovelox ~]$ ls
 backups  data  initdb_postgresql.log  logfile
 [postgres@egovelox ~]$ cat logfile
-2020-03-28 04:07:51.750 CET [16656] LOG:  listening on IPv6 address "::1", port 5432
-2020-03-28 04:07:51.750 CET [16656] LOG:  listening on IPv4 address "127.0.0.1", port 5432
-2020-03-28 04:07:51.754 CET [16656] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-2020-03-28 04:07:51.762 CET [16656] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
-2020-03-28 04:07:51.773 CET [16656] LOG:  redirecting log output to logging collector process
-2020-03-28 04:07:51.773 CET [16656] HINT:  Future log output will appear in directory "log".
+2020-03-27 04:07:51.750 CET [16656] LOG:  listening on IPv6 address "::1", port 5432
+2020-03-27 04:07:51.750 CET [16656] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-03-27 04:07:51.754 CET [16656] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2020-03-27 04:07:51.762 CET [16656] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-03-27 04:07:51.773 CET [16656] LOG:  redirecting log output to logging collector process
+2020-03-27 04:07:51.773 CET [16656] HINT:  Future log output will appear in directory "log".
 ```
 ## Configure the server
 
