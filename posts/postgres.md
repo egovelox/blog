@@ -28,7 +28,7 @@ sudo service postgresql start
 ```
 This can be explained : a script was run during the install, and, among other tasks created a /var/lib/pgsql owned by the user postgres.
 
-Though it did not create a cluster - an instance of PSQL allows you to manage multiple databases in a so-called cluster - and that's why the /var/lib/pgsql/data folder is still empty.
+It did not create a cluster though - an instance of PSQL allows you to manage multiple databases in a so-called cluster - and that's why the /var/lib/pgsql/data folder is still empty.
 
 So first issue the command as sudo :
 ```bash
@@ -94,7 +94,7 @@ backups  data  initdb_postgresql.log  logfile
 ```
 ## Configure the server
 
-My version of CentOS 8 (it might not always be so) provided firewalld by default. So first of all, open PSQL default port (5432) : 
+My version of CentOS 8 (but note that it might not always be so) provided firewalld by default. So first of all, open PSQL default port (5432) : 
 
 ```bash
 sudo firewalld-cmd --zone=public --permanent --add-port 5432/tcp 
