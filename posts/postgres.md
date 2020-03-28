@@ -5,7 +5,7 @@ date: "2020-03-27"
 public: true
 ---
 
-Here is how to configure a PSQL database on a **CentOS 8** server.
+Here is how to configure a PSQL instance on a **CentOS 8** server.
 
 ## Install from repo
 
@@ -157,6 +157,7 @@ user: postgres
 passwd : the pass you chose
 address : your public IP
 port : the port you chose
+database : a default one is postgres
 ```
 
 
