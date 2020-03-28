@@ -35,12 +35,16 @@ So first issue the command as sudo :
 service postgresql initdb
 ```
 
-You will then have to switch user...
+You can now switch user...
 ```bash
-sudo su - postgres
+sudo su - postgres psql
+```
+and query :
+```sql
+SELECT version();
 ```
 
-to be able to check the result in /var/lib/pgsql :
+To check the result of this initdb, go in /var/lib/pgsql :
 ```bash
 [postgres@egovelox ~]$ ls
 backups  data  initdb_postgresql.log
@@ -71,8 +75,10 @@ Success. You can now start the database server using:
 
 ```
 
-Now you can run the latter, as postgres user, or more commonly, as you are
-
+To start the server as it is, now you can run the latter, as postgres user, or more commonly, as you are
 ```bash
 systemctl start postgresql && systemctl enable postgresql
 ```
+
+## Configure the server
+
