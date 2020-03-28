@@ -5,7 +5,7 @@ date: "2020-03-27"
 public: true
 ---
 
-Here is how to configure a PSQL database on a CentOS server.
+Here is how to configure a PSQL database on a CentOS 8 server.
 
 ## Install from repo
 
@@ -75,10 +75,30 @@ Success. You can now start the database server using:
 
 ```
 
-To start the server as it is, now you can run the latter, as postgres user, or more commonly, as you are
+To start the server as it is, now you can run the latter (adding &), as postgres user, or more commonly, as you are
 ```bash
 systemctl start postgresql && systemctl enable postgresql
 ```
-
+then checking the first logfile
+```
+[postgres@egovelox ~]$ ls
+backups  data  initdb_postgresql.log  logfile
+[postgres@egovelox ~]$ cat logfile
+2020-03-28 04:07:51.750 CET [16656] LOG:  listening on IPv6 address "::1", port 5432
+2020-03-28 04:07:51.750 CET [16656] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-03-28 04:07:51.754 CET [16656] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2020-03-28 04:07:51.762 CET [16656] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-03-28 04:07:51.773 CET [16656] LOG:  redirecting log output to logging collector process
+2020-03-28 04:07:51.773 CET [16656] HINT:  Future log output will appear in directory "log".
+```
 ## Configure the server
+
+CentOS 8, in my case, provided firewalld by default. So first of all, open PSQL default port (5432) : 
+
+```bash
+sudo firewalld-cmd --zone=public --permanent --add-port 5432/tcp 
+sudo firewall-cmd --reload
+```
+
+
 
