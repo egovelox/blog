@@ -154,7 +154,7 @@ And its'all done ! For safety, in your router, you'll be wise to map a different
 user: postgres
 passwd : the pass you chose
 address : your public IP
-port : the port you chose. 
+port : the port you chose
 ```
 
 
