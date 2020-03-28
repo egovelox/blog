@@ -43,8 +43,13 @@ and query :
 ```sql
 SELECT version();
 ```
+You're in. Now be safe, just add a password for the postgres user :
 
-To check the result of this initdb, go in /var/lib/pgsql :
+```sql
+ALTER USER postgres PASSWORD 'myPassword';
+```
+
+Ok, let's quit psql (issue command \q) and now check the result of this whole init process. Go in /var/lib/pgsql :
 ```bash
 [postgres@egovelox ~]$ ls
 backups  data  initdb_postgresql.log
@@ -101,6 +106,37 @@ sudo firewalld-cmd --zone=public --permanent --add-port 5432/tcp
 sudo firewall-cmd --reload
 ```
 
+Now we need to configure how PGSQL allows local or distant connections to databases. Two files are needed here, in directory /var/lib/pgsql/data/ : 
+
+1. postgresql.conf
+2. pg_hba.conf (host-based-authentication)
+
+First in postgresql.conf, change the directive listen_addresses like this :
+```bash
+listen_addresses = '*'                  # what IP address(es) to listen on;
+                                        # comma-separated list of addresses;
+                                        # defaults to 'localhost'; use '*' for all
+                                        # (change requires restart)
+```
+
+Second, in pg_hba.conf, like this, assuming that PGSQL, in my case behind a router, dialogs with the outside through the gateway 192.168.2.1 : 
+
+```bash
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            ident
+host    all             postgres        192.168.2.1/32          md5
+# IPv6 local connections:
+host    all             all             ::1/128                 ident
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     peer
+host    replication     all             127.0.0.1/32            md5
+host    replication     all             ::1/128                 md5
+```
 
 
 
