@@ -5,7 +5,7 @@ date: "2020-03-27"
 public: true
 ---
 
-Here is how to configure a PSQL database on a CentOS 8 server.
+Here is how to configure a PSQL database on a **CentOS 8** server.
 
 ## Install from repo
 
@@ -15,7 +15,7 @@ yum install postgresql-server postgresql-contrib
 
 ## Getting the thing started
 
-The first time you will try to run postgresql, you'll get an error !!
+The first time you will try to run postgresql, **you'll get an error !!**
 
 ```bash
 sudo service postgresql start
@@ -43,7 +43,7 @@ and query :
 ```sql
 SELECT version();
 ```
-You're in. Now be safe, just add a password for the postgres user :
+You're in. Now be safe, just **add a password for the postgres user** :
 
 ```sql
 ALTER USER postgres PASSWORD 'myPassword';
@@ -80,9 +80,9 @@ Success. You can now start the database server using:
 
 ```
 
-To start the server as it is, now you can run the latter (adding &), as postgres user, or more commonly, as you are
+To start the server as it is, now you can, as user postgres, run the latter (adding &) , or just from your normal account :
 ```bash
-systemctl start postgresql && systemctl enable postgresql
+sudo systemctl start postgresql && systemctl enable postgresql
 ```
 
 then checking the "newborn" logfile in /var/lib/pgsql
@@ -99,17 +99,17 @@ backups  data  initdb_postgresql.log  logfile
 ```
 ## Configure the server
 
-My version of CentOS 8 (but note that it might not always be so) provided firewalld by default. So first of all, open PSQL default port (5432) : 
+My version of CentOS 8 (but note that it might not always be so) provided **firewalld** by default. So first of all,open PSQL default port (**5432**) : 
 
 ```bash
 sudo firewalld-cmd --zone=public --permanent --add-port 5432/tcp 
 sudo firewall-cmd --reload
 ```
 
-Now we need to configure how PGSQL allows local or distant connections to databases. Two files are needed here, in directory /var/lib/pgsql/data/ : 
+Now we need to configure how PGSQL allows local or distant connections to databases. Two files are needed here, in the **PGSQL instance directory /var/lib/pgsql/data/** : 
 
-1. postgresql.conf
-2. pg_hba.conf (host-based-authentication)
+1. **postgresql.conf**
+2. **pg_hba.conf** (host-based-authentication)
 
 First in postgresql.conf, change the directive listen_addresses like this :
 ```bash
@@ -119,7 +119,7 @@ listen_addresses = '*'                  # what IP address(es) to listen on;
                                         # (change requires restart)
 ```
 
-Be aware, here PGSQL needs a restart : 
+Be aware, **here PGSQL needs a restart** : 
 
 ```bash
 sudo systemctl restart postgresql
@@ -148,7 +148,7 @@ host    replication     all             127.0.0.1/32            md5
 host    replication     all             ::1/128                 md5
 ```
 
-And its'all done (for the 'basics' of course) ! 
+**And its'all done** (for the 'basics' of course) ! 
 
 Choose safety, in your router map a different port to 5432. Now you'll get remote access to your databases with the following parameters : 
 
