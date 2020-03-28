@@ -7,14 +7,18 @@ public: true
 
 Here is how to configure a PSQL database on a CentOS server.
 
+## Install from repo
+
 ```bash
 yum install postgresql-server postgresql-contrib
 ```
 
-The first time you run, you'll get an error
+## Start configuration
+
+The first time you will try to run postgresql, you'll get an error !!
 
 ```bash
-sudo systemctl start postgresql
+sudo service postgresql start
 ```
 
 ```bash
@@ -24,23 +28,24 @@ sudo systemctl start postgresql
 ```
 This can be explained : a script was run during the install, and, among other tasks created a /var/lib/pgsql owned by the user postgres.
 
-Though it did not create a cluster (an instance of PSQL allows you to manage multiple databases in a what is called a cluster), and that's why the pgsql/data folder is still empty.
+Though it did not create a cluster - an instance of PSQL allows you to manage multiple databases in a so-called cluster - and that's why the /var/lib/pgsql/data folder is still empty.
 
-So first run
+So first issue the command as sudo :
 ```bash
-sudo service postgresql initdb
+service postgresql initdb
 ```
 
-You can switch user...
+You will then have to switch user...
 ```bash
 sudo su postgres
 ```
 
-and check the result in /var/lib/pgsql :
+to be able to check the result in /var/lib/pgsql :
 ```bash
-[postgres@cuncext ~]$ ls
+[postgres@egovelox ~]$ ls
 backups  data  initdb_postgresql.log
-[postgres@cuncext ~]$ cat initdb_postgresql.log
+
+[postgres@egovelox ~]$ cat initdb_postgresql.log
 The files belonging to this database system will be owned by user "postgres".
 This user must also own the server process.
 
