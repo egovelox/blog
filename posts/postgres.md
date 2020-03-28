@@ -148,7 +148,9 @@ host    replication     all             127.0.0.1/32            md5
 host    replication     all             ::1/128                 md5
 ```
 
-And its'all done ! For safety, in your router, you'll be wise to map a different port to 5432. Now get remote access to your databases with the following parameters : 
+And its'all done, of course for the 'basics' ! 
+
+Choose safety, in your router map a different port to 5432. Now you'll get remote access to your databases with the following parameters : 
 
 ```bash
 user: postgres
