@@ -119,16 +119,19 @@ listen_addresses = '*'                  # what IP address(es) to listen on;
                                         # (change requires restart)
 ```
 
-Second, in pg_hba.conf, like this, assuming that PGSQL, in my case behind a router, dialogs with the outside through the gateway 192.168.2.1 : 
+Let's assume here that our machine runs behind a router, with a static address (e.g 192.168.1.2).
+Since PGSQL only gets a dialog with the outside passing through the router/gateway 192.168.1.1
+
+in postgresql.conf you can configure a new "host" line, like this, using our postgres user, the router address and the md5 method : 
 
 ```bash
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
 # "local" is for Unix domain socket connections only
-local   all             all                                     trust
+local   all             all                                     peer
 # IPv4 local connections:
 host    all             all             127.0.0.1/32            ident
-host    all             postgres        192.168.2.1/32          md5
+host    all             postgres        192.168.1.1/32          md5
 # IPv6 local connections:
 host    all             all             ::1/128                 ident
 # Allow replication connections from localhost, by a user with the
