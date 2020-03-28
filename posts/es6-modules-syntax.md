@@ -1,5 +1,5 @@
 ---
-title: "javascript ES6: export/import "
+title: "Javascript ES6: export/import "
 description: "traditional post"
 date: "2020-01-17"
 public: true
