@@ -26,11 +26,11 @@ sudo service postgresql start
  Use "/usr/bin/postgresql-setup --initdb"
  to initialize the database cluster.
 ```
-This can be explained : a script was run during the install, and, among other tasks, **it created a directory /var/lib/pgsql owned by the user postgres**.
+The reason for this ? A script was run during the install, and, among other tasks, **it created a directory /var/lib/pgsql owned by the user postgres**.
 
 It did not create a cluster though - a single instance of PSQL allows you to manage multiple databases in a so-called cluster - and that's why the /var/lib/pgsql/data folder is still empty.
 
-So always first issue this command as sudo :
+So at first, always issue this command as sudo :
 ```bash
 service postgresql initdb
 ```
