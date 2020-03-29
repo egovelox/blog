@@ -134,10 +134,12 @@ sudo systemctl restart postgresql
 ```
 
 
-Let's now assume that our machine runs behind a router, with a static address (e.g 192.168.1.2).
-Since PGSQL only gets a dialog with the outside passing through the router/gateway 192.168.1.1
+Let's now assume that our machine runs behind a router, with a static address.
+Here, using 0.0.0.0/0, PGSQL instance should be able to get a dialog with any machine from the outside, 
 
-in postgresql.conf you can configure a new "host" line, like this, using our postgres user, the router address and the md5 method : 
+1. on all databases, 
+2. as long as the user is postgres 
+3. and password is valid (we use md5 to encrypt it along the wire).
 
 ```bash
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
@@ -146,7 +148,7 @@ in postgresql.conf you can configure a new "host" line, like this, using our pos
 local   all             all                                     peer
 # IPv4 local connections:
 host    all             all             127.0.0.1/32            ident
-host    all             postgres        192.168.1.1/32          md5
+host    all             postgres        0.0.0.0/0               md5
 # IPv6 local connections:
 host    all             all             ::1/128                 ident
 # Allow replication connections from localhost, by a user with the
@@ -154,6 +156,11 @@ host    all             all             ::1/128                 ident
 local   replication     all                                     peer
 host    replication     all             127.0.0.1/32            md5
 host    replication     all             ::1/128                 md5
+```
+
+Be aware, **here PGSQL needs a reload** : 
+```bash
+sudo systemctl reload postgresql
 ```
 
 **And its'all done** (for the 'basics' of course) ! 
