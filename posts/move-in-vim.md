@@ -23,9 +23,9 @@ Le **hjkl** est la base, toujours gardée sous la main. Ils permettent le mouvem
 Le compteur vient étendre ce mouvement: **5j** me mène 5 lignes plus bas.
 
 Bien connaître le mouvement dans vim, c'est ensuite pouvoir le combiner à des actions: par exemple, 
-d5j me supprime les 5 lignes qui suivent celle où je me trouve (laquelle est aussi supprimée).
+**d5j** me supprime les 5 lignes qui suivent celle où je me trouve (laquelle est aussi supprimée).
 
-D'où ce [jeu d'aventure](#https://vim-adventures.com) incroyable !
+D'où ce [jeu d'aventure](https://vim-adventures.com) incroyable !
 
 ### Mouvement sur la ligne
 
