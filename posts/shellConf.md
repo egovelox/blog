@@ -1,8 +1,8 @@
 ---
-title:\ \"Shell Conf\"
-description:\ \"traditional\ post\"
-date:\ \"2020-10-10\"
-public:\ true
+title: "Shell Conf"
+description: "traditional post"
+date: "2020-10-10"
+public: true
 ---
 # How to configure your shell
 
