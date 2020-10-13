@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta description="traditional post">
-    <title>calloc example</title>
+    <title>A calloc example</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
     <link rel="stylesheet" href="./styles/main.css">
 
@@ -32,21 +32,18 @@
     
   <article>
     <header>
-      <h1>calloc example</h1>
+      <h1>A calloc example</h1>
     </header>
     <div class="markdown-body">
       <p>When you need to allocate an array during runtime.</p>
-<pre><code class="hljs language-c">
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&#x3C;stdio.h></span></span>
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+<pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
 </span>{
     <span class="hljs-keyword">double</span> *<span class="hljs-built_in">array</span>;
     <span class="hljs-keyword">int</span> i;
-    
-<span class="hljs-comment">/* 
-/*Allocation of 3 * 8 bytes, for 3 double numbers.
-/*calloc() returns an address of type void* 
+
+<span class="hljs-comment">/*
+ * Allocation of 3 * 8 bytes, for 3 double numbers. c
+ * calloc() returns an address of type void*
 */</span>
     <span class="hljs-built_in">array</span> = (<span class="hljs-keyword">double</span>*) <span class="hljs-built_in">calloc</span>(<span class="hljs-number">3</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">double</span>));
 
@@ -54,16 +51,21 @@
 
     <span class="hljs-built_in">array</span>[<span class="hljs-number">0</span>] = <span class="hljs-number">1.1</span>;
     <span class="hljs-built_in">array</span>[<span class="hljs-number">1</span>] = <span class="hljs-number">2.21</span>;
-    arrat[<span class="hljs-number">3</span>] = <span class="hljs-number">5.654234</span>;
+    <span class="hljs-built_in">array</span>[<span class="hljs-number">2</span>] = <span class="hljs-number">5.654234</span>;
 
     <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>; i&#x3C;<span class="hljs-number">3</span>; i++)
     {
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"array[%d] : %6.lf"</span>, i, <span class="hljs-built_in">array</span>[i]);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"array[%d] : %lf\n"</span>, i, <span class="hljs-built_in">array</span>[i]);
     }
 
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-}
-</code></pre>
+}</code></pre>
+<p>Result after execution : </p>
+<pre><code class="hljs language-bash">egovelox$ ./callocExample
+array address: 0x7fd64ac01820
+array[0] : 1.100000
+array[1] : 2.210000
+array[2] : 5.654234</code></pre>
 
     </div>
   </article>
