@@ -51,11 +51,11 @@
 <p>You can now switch user and get directly the psql command-line...</p>
 <pre><code class="hljs language-bash">sudo su - postgres psql</code></pre>
 <p>You can issue the query :</p>
-<pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">version</span>();</code></pre>
+<pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span> version();</code></pre>
 <p>and this other : </p>
-<pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> pg_roles;</code></pre>
+<pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> pg_roles;</code></pre>
 <p>You're in. Now be safe, just <strong>add a password for the postgres user</strong> :</p>
-<pre><code class="hljs language-sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> postgres <span class="hljs-keyword">PASSWORD</span> <span class="hljs-string">'myPassword'</span>;</code></pre>
+<pre><code class="hljs language-sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> postgres PASSWORD <span class="hljs-string">'myPassword'</span>;</code></pre>
 <p>Let's quit psql (issue command \q) and now check the result of <strong>this init process</strong>. Go in /var/lib/pgsql :</p>
 <pre><code class="hljs language-bash">[postgres@egovelox ~]$ ls
 backups  data  initdb_postgresql.log
@@ -158,5 +158,6 @@ database : a default one is postgres</code></pre>
   </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>

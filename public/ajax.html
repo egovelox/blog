@@ -50,18 +50,18 @@
         <span class="hljs-comment">// readyState 3: processing request </span>
         <span class="hljs-comment">// readyState 4: request finished and response is ready</span>
 
-        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.readyState == <span class="hljs-number">4</span> &#x26;&#x26; <span class="hljs-keyword">this</span>.status == <span class="hljs-number">200</span>)
+        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">this</span>.readyState == <span class="hljs-number">4</span> &#x26;&#x26; <span class="hljs-built_in">this</span>.status == <span class="hljs-number">200</span>)
         {
             <span class="hljs-comment">// Get Server Response Headers </span>
             <span class="hljs-comment">// req.getAllResponseHeaders() returns all</span>
             <span class="hljs-comment">// req.getResponseHeader() returns only specific ones</span>
-            <span class="hljs-keyword">var</span> header = <span class="hljs-keyword">this</span>.getResponseHeader();
+            <span class="hljs-keyword">var</span> header = <span class="hljs-built_in">this</span>.getResponseHeader();
 
 
             <span class="hljs-comment">// Get Server Response Data</span>
             <span class="hljs-comment">// req.responseText is STRING</span>
             <span class="hljs-comment">// req.responseXML is XML</span>
-            <span class="hljs-keyword">var</span> response = <span class="hljs-keyword">this</span>.responseText;
+            <span class="hljs-keyword">var</span> response = <span class="hljs-built_in">this</span>.responseText;
 
             <span class="hljs-comment">// ... do whatever you want</span>
         }
@@ -90,5 +90,6 @@
   </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang ="en">
+  <head>
+    
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta description="traditional post">
+    <title>Move fast with vim!</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    
+  </head>
+  <body>
+  <nav>
+        <div class="nav-brand">
+            <svg id = "brand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><defs><style>.cls-1{font-size:41px;fill:#fff;font-family:AmericanTypewriter, American Typewriter;}.cls-2{letter-spacing:-0.03em;}</style></defs><title>egovelox</title><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><rect width="245" height="245"/><text class="cls-1" transform="translate(57.7 130)">EGO<tspan x="0" y="49.2">VEL</tspan><tspan class="cls-2" x="83.56" y="49.2">O</tspan><tspan x="109.02" y="49.2">X</tspan></text></g></g></svg>
+        </div>
+        <ul id="navbar">
+          <li class="nav-item">
+            <a href="./index.html">&#9783; Articles</a>
+          </li>
+          <li class="nav-item">
+            <a href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html">Nugae</a>
+          </li>
+        </ul>
+    </nav>
+    
+  <article>
+    <header>
+      <h1>Move fast with vim!</h1>
+    </header>
+    <div class="markdown-body">
+      <p>Comme on trouve sur VSCode un plugin permettant de simuler vim, découvrons l'étonnante faculté de mouvement du célèbre éditeur.</p>
+<h3 id="préalable">Préalable</h3>
+<p>On sait bien que la faculté de mouvement, dans vim, est séparée de l'édition de texte par les touches Esc/i. Passer d'une faculté à l'autre, càd faire l'aller retour entre i et Esc, est on ne peut plus fastidieux. Pour éviter cette lourdeur, on remap la touche Esc sur une autre combinaison de touches. 'kj' est une possibilité.</p>
+<pre><code class="hljs language-sh"><span class="hljs-comment"># in .vimrc</span>
+inoremap kj &#x3C;esc> </code></pre>
+<h3 id="basiques">Basiques</h3>
+<p>Le <strong>hjkl</strong> est la base, toujours gardée sous la main. Ils permettent le mouvement simple, horizontal et vertical.</p>
+<p>Le compteur vient étendre ce mouvement: <strong>5j</strong> me mène 5 lignes plus bas.</p>
+<p>Bien connaître le mouvement dans vim, c'est ensuite pouvoir le combiner à des actions: par exemple,
+<strong>d5j</strong> me supprime les 5 lignes qui suivent celle où je me trouve (laquelle est aussi supprimée).</p>
+<p>D'où ce <a href="https://vim-adventures.com">jeu d'aventure</a> incroyable !</p>
+<h3 id="mouvement-sur-la-ligne">Mouvement sur la ligne</h3>
+<p>On utilise 0/$ pour aller au début ou à la fin de la ligne.</p>
+<p>On utilise couramment <strong>w/W</strong> pour sauter de mot en mot. <strong>W</strong> permet de ne pas prendre ( { . et tels autres caractères pour des mots. Dans le sens arrière, on utilise <strong>b/B</strong>. Ainsi arrivé au pied d'un mot, on passe à la fin avec <strong>e/E</strong></p>
+<p>Les compteurs s'utilisent par là dessus, et <strong>3w</strong> devient : avancer de 3 mots.</p>
+<p>Dans la ligne (ou plus loin du reste) on peut avoir repéré un mot, et vouloir s'y rendre : on utilise <strong>/lemot</strong> et <strong>n/p</strong> pour naviguer entre ses occurences éventuelles.</p>
+<p>Vim a mémoire, et <strong>/Enter</strong> rappelle la dernière recherche. Si la chose cherchée est la même que sous le curseur, <strong>*</strong> suffit simplement pour trouver la prochaine occurence. </p>
+<p>Dans tout ceci, avec <strong>/</strong> on va toujours chercher devant, avec <strong>?</strong> on recherche derrière.</p>
+<p>Toujours sur la ligne, même chose pour un caractère avec <strong>f</strong> (ou <strong>F</strong> pour rejoindre un caractère qui précède le curseur) : <strong>f"</strong> par exemple, vous mène au prochain '"'. On utilise <strong>;/,</strong> pour passer d'une occurence à l'autre.</p>
+<p>Quasi synonyme de f/F, on trouve <strong>t/T</strong> (devant signifier 'til) pour arrêter le curseur <strong>juste avant</strong> le caractère recherché.</p>
+<h3 id="mouvement-vertical">Mouvement vertical</h3>
+<p>On utilise <strong>H/M/L</strong> (high, middle, low) pour le déplacement sur l'écran.
+On utilise <strong>gg/G</strong> pour le déplacement vers la première ou la dernière ligne du fichier.</p>
+<p>Le compteur est couramment employé en conjonction avec les numéros de lignes visibles à gauche. On m'enmène à la ligne 18 avec la commande <strong>18gg</strong> ou <strong>18G</strong>.</p>
+<p>Fort pratique, en mode visuel (Ctrl + V) pour sélectionner une portion comprise entre deux lignes déterminées.</p>
+
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
+
+    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
