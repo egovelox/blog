@@ -274,6 +274,11 @@ cross-spawn@^5.0.1:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
+css-toggle-switch@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/css-toggle-switch/-/css-toggle-switch-4.1.0.tgz#b4ba42856194bc0bdea610ab37c8d38d44d21d4f"
+  integrity sha512-XdA6fyaQqlBqTmFa6NX58tLPJj4SgDLAxV4Ec73GHQYRTYUTZoEyYHYxWGacLNTP8sTiVycKcAMBrPBKaiIZ9g==
+
 debug@2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"

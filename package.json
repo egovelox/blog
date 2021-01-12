@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/egovelox/ssg#readme",
   "dependencies": {
+    "css-toggle-switch": "^4.1.0",
     "front-matter": "^3.0.2",
     "nunjucks": "^3.2.0",
     "path": "^0.12.7",

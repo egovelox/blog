@@ -8,6 +8,7 @@ const remarkHighlight = require('remark-highlight.js');
 const nunjucks = require('nunjucks');
 
 const postsDirPath = path.resolve(__dirname, 'posts');
+const nugaeDirPath = path.resolve(__dirname, 'nugae');
 const publicDirPath = path.resolve(__dirname, 'public');
 
 
@@ -106,9 +107,9 @@ const createPostFile = async post => {
 
 
 // Generate Index file
-const createIndexFile = async posts => {
-    const fileData = nunjucks.render(getTemplatePath('index'), {posts});
-    const filePath = path.resolve(publicDirPath, 'index.html');
+const createIndexFile = async (posts, target) => {
+    const fileData = nunjucks.render(getTemplatePath(target), {posts});
+    const filePath = path.resolve(publicDirPath, target + '.html');
 
     await fs.writeFile(filePath, fileData, 'utf-8');
 }
@@ -132,10 +133,24 @@ const build = async () => {
     const createdPosts = await Promise.all(postsToCreate);
 
     await createIndexFile(
-        createdPosts.sort((a,b) => new Date(b.date) - new Date(a.date))
+        createdPosts.sort((a,b) => new Date(b.date) - new Date(a.date)),
+        "index"
     );
 
-    return createdPosts;
+    const nugae = await getPosts(nugaeDirPath);
+
+    const nugaeToCreate = nugae
+        .filter(post => Boolean(post.public))
+        .map(post => createPostFile(post));
+
+    const createdNugae = await Promise.all(nugaeToCreate);
+
+    await createIndexFile(
+        createdNugae.sort((a,b) => new Date(b.date) - new Date(a.date)),
+        "index-nugae"
+    );
+
+    return [...createdPosts, ...createdNugae];
 }
 
 build()

@@ -1,5 +1,5 @@
 ---
-title: "Ajax basics"
+title: "Ajax2 basics"
 description: "traditional post"
 date: "2020-01-22"
 public: true
