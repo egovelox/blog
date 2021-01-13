@@ -234,5 +234,5 @@ Media Queries
     position: absolute;
     bottom: 0.08rem;
     right: 0.3rem;
-
+    display: none;
 }
