@@ -48,18 +48,6 @@
       /* breathing room for bootstrap/foundation classes.
      */
       line-height: 2em; }
-    .switch-light input:focus ~ span a,
-    .switch-light input:focus + label {
-      outline-width: 2px;
-      outline-style: solid;
-      outline-color: Highlight;
-      /* Chrome/Opera gets its native focus styles.
-     */ } }
-    @media only screen and (-webkit-min-device-pixel-ratio: 0) {
-      .switch-light input:focus ~ span a,
-      .switch-light input:focus + label {
-        /* outline-color: -webkit-focus-ring-color; */
-        outline-style: auto; } }
 
 @media only screen {
   /* don't hide the input from screen-readers and keyboard access
