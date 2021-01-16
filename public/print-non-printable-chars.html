@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="traditional post">
+      <title>print non-printable ASCII chars</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,48 +68,31 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1 >Nugae </h1><span>&nbsp;-arum, f., bagatelles, riens, sornettes...</span>
+  <article>
+    <header>
+      <h1>print non-printable ASCII chars</h1>
     </header>
+    <div class="markdown-body">
+      <p>Just use commands producing dumps :</p>
+<p>use either od,</p>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">echo</span> -n <span class="hljs-string">"<span class="hljs-variable">$IFS</span>"</span> | od -t x1
+0000000 20 09 0a
+0000003</code></pre>
+<p>or simply xxd</p>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">echo</span> -n <span class="hljs-string">"<span class="hljs-variable">$IFS</span>"</span> | xxd -u -c1
+00000000: 20
+00000001: 09 . 
+00000002: 0A .</code></pre>
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="move-in-vim"><span class="indexPostDate">2020-10-13</span><span class="indexPostTitle">Move fast with vim!</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="print-non-printable-chars"><span class="indexPostDate">2020-04-02</span><span class="indexPostTitle">print non-printable ASCII chars</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="calloc example"><span class="indexPostDate">2020-02-15</span><span class="indexPostTitle">A calloc example</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="ajax"><span class="indexPostDate">2020-01-22</span><span class="indexPostTitle">Ajax2 basics</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="es6-modules-syntax"><span class="indexPostDate">2020-01-17</span><span class="indexPostTitle">Javascript ES6: export/import </span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="html-footer"><span class="indexPostDate">2020-01-16</span><span class="indexPostTitle">Footer en HTML</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="script-bash"><span class="indexPostDate">2020-01-15</span><span class="indexPostTitle">Scripting shell sous UNIX</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="hello-world"><span class="indexPostDate">2019-12-28</span><span class="indexPostTitle">Hello world !</span></a>
-      </li>
-    
-    </ul>
+    </div>
+  </article>
 
-  </section>
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>
