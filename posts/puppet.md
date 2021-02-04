@@ -17,7 +17,7 @@ pupagent.egovelox.com for my first agent.
 You can find packages on https://apt.puppetlabs.com
 ```bash
 # in your homedir, 
-# replace the right pkg for agent or server
+# replace the right pkg and version, for agent or server
 
 wget https://apt.puppetlabs.com/puppet7-release-bionic.deb
 sudo dpkg -i puppet7-release-bionic.deb
@@ -91,7 +91,7 @@ puppet agent --test
 # should print
 ...
 ...
-Couldn\'t fetch certificate from CA server; you might still need to sign this agent\'s certificate
+Could not fetch certificate from CA server; you might still need to sign this agent certificate
 ```
 
 **Back on the server**, we should see the pending certificate : 
@@ -109,9 +109,9 @@ Back **on the agent** , check again :
 puppet agent --test
 
 ```
-and you should be done for the install.
+and you should be done for the basic install.
 
-
+## Next steps
 You might use the following **puppet docs** to get familiar with this tool : 
 
 Important directories and files
