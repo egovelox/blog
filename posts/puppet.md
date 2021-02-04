@@ -8,7 +8,10 @@ public: true
 
 ## Prerequisits
 You should register the dnsnames of your machines in your registrar, or use
-a mapping of your IP inside /etc/hosts
+a mapping of your IP inside /etc/hosts.
+Throughout this example, I use :
+pupmaster.egovelox.com for the server,
+pupagent.egovelox.com for my first agent.
 
 ## Install on ubuntu 18.04
 You can find packages on https://apt.puppetlabs.com
@@ -64,7 +67,7 @@ dns_alt_names = pupmaster.egovelox.com
 ```
 ## setup the certificates
 
-Start puppetserver on the server :
+Start puppetserver **on the server** :
 ```bash
 systemctl start puppetserver
 
@@ -76,7 +79,7 @@ and simply run :
 puppetserver ca setup
 
 ```
-Now the server is ready, let's switch to the agent and start it:
+Now the server is ready, let's **switch to the agent** and start it:
 ```bash
 systemctl start puppet
 
@@ -88,8 +91,40 @@ puppet agent --test
 # should print
 ...
 ...
-Couldn't fetch certificate from CA server; you might still need to sign this agent's certificate
+Couldn\'t fetch certificate from CA server; you might still need to sign this agent\'s certificate
 ```
+
+**Back on the server**, we should see the pending certificate : 
+```bash
+puppetserver ca list
+
+```
+Sign it with the following command : 
+```bash
+puppetserver ca sign --certname pupagent.egovelox.com
+
+```
+Back **on the agent** , check again : 
+```bash
+puppet agent --test
+
+```
+and you should be done for the install.
+
+
+You might use the following **puppet docs** to get familiar with this tool : 
+
+Important directories and files
+https://puppet.com/docs/puppet/7.3/dirs_important_directories.html
+
+Beginner's guide to writing modules
+https://puppet.com/docs/puppet/7.3/bgtm.html
+
+Catalog of modules 
+https://forge.puppet.com/
+
+Publishing modules on the Puppet Forge
+https://docs.huihoo.com/puppet/puppet/3/reference/modules_publishing.html
 
 
 
