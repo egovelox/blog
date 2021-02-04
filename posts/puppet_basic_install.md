@@ -121,18 +121,18 @@ puppet agent --test
 and you should be done for the basic install.
 
 ## Next steps
-You might use the following **puppet docs** to get familiar with this tool : 
+You might be interested with the following **puppet docs** to get familiar with this tool : 
 
-Important directories and files
+- Important directories and files
 https://puppet.com/docs/puppet/7.3/dirs_important_directories.html
 
-Beginner's guide to writing modules
+- Beginner's guide to writing modules
 https://puppet.com/docs/puppet/7.3/bgtm.html
 
-Catalog of modules 
+- Catalog of modules 
 https://forge.puppet.com/
 
-Publishing modules on the Puppet Forge
+- Publishing modules on the Puppet Forge
 https://docs.huihoo.com/puppet/puppet/3/reference/modules_publishing.html
 
 
