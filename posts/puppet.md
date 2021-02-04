@@ -34,7 +34,7 @@ systemctl status puppet
 
 ```
 
-###### on the agent
+###### configure the agent
 
 ```bash
 #/etc/puppetlabs/puppet/puppet.conf
@@ -44,7 +44,7 @@ server = pupmaster.egovelox.com
 certname = pupagent.egovelox.com
 
 ```
-###### on the server
+###### configure the server
 
 ```bash
 #/etc/puppetlabs/puppet/puppet.conf
@@ -62,14 +62,29 @@ codedir = ...
 dns_alt_names = pupmaster.egovelox.com
 
 ```
+###### setup the certificates
 
 Start puppetserver on the server :
 ```bash
 systemctl start puppetserver
+
 ```
-then puppet, on the agent :
+and simply run : 
+```bash
+# use -h if needed
+
+puppetserver ca setup
+
+```
+Now the server is ready, let's switch to the agent and start it:
 ```bash
 systemctl start puppet
+
+```
+Then try to run :
+```bash
+puppet agent --test
+
 ```
 
 
