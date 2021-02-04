@@ -7,14 +7,16 @@ public: true
 
 
 ## Prerequisits
-You should register the dnsnames of your machines in your registrar, or use
-a mapping of your IP inside /etc/hosts.
+You should register the dnsnames of your machines in your registrar, 
+
+or use a mapping of your IP inside /etc/hosts.
+
 Throughout this example, I use :
-pupmaster.egovelox.com for the server,
-pupagent.egovelox.com for my first agent.
+- pupmaster.egovelox.com for the server,
+- pupagent.egovelox.com for my first agent.
 
 ## Install on ubuntu 18.04
-You can find packages on https://apt.puppetlabs.com
+You can find debian-based packages on https://apt.puppetlabs.com
 ```bash
 # in your homedir, 
 # replace the right pkg and version, for agent or server
@@ -25,7 +27,7 @@ sudo apt update
 
 ```
 
-Check puppet is not running on the server nore on the agent.
+Check if puppet is not running on the server nore on the agent.
 
 ```bash
 # on server
@@ -37,7 +39,7 @@ systemctl status puppet
 
 ```
 
-Configure the agent
+Configure the agent puppet.conf file
 
 ```bash
 #/etc/puppetlabs/puppet/puppet.conf
@@ -47,7 +49,7 @@ server = pupmaster.egovelox.com
 certname = pupagent.egovelox.com
 
 ```
-Configure the server
+Configure the server puppet.conf file
 
 ```bash
 #/etc/puppetlabs/puppet/puppet.conf
@@ -65,7 +67,7 @@ codedir = ...
 dns_alt_names = pupmaster.egovelox.com
 
 ```
-## setup the certificates
+## Setup the SSL certificates
 
 Start puppetserver **on the server** :
 ```bash
@@ -88,7 +90,6 @@ Then try to run :
 ```bash
 puppet agent --test
 
-# should print
 ...
 ...
 Could not fetch certificate from CA server; you might still need to sign this agent certificate
@@ -99,7 +100,7 @@ Could not fetch certificate from CA server; you might still need to sign this ag
 puppetserver ca list
 
 ```
-Sign it with the following command : 
+Now you can sign it with the following command : 
 ```bash
 puppetserver ca sign --certname pupagent.egovelox.com
 
