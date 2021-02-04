@@ -32,7 +32,11 @@ apt-cache search ^puppet
 
 ```
 
-After your apt-installs, 
+After your apt-installs, modify your PATH and add to it:
+```bash
+#inside .bashrc or your shell conf
+export PATH=$PATH:"/opt/puppetlabs/bin/"
+```
 
 check if puppet is not running on the server nore on the agent,
 
