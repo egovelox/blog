@@ -26,9 +26,17 @@ sudo dpkg -i puppet7-release-bionic.deb
 sudo apt update
 
 ```
+Now you can find and install the latest versions with : 
+```bash
+apt-cache search ^puppet
 
-Check if puppet is not running on the server nore on the agent.
+```
 
+After your apt-installs, 
+
+check if puppet is not running on the server nore on the agent,
+
+and if it is, stop it.
 ```bash
 # on server
 systemctl status puppetserver
@@ -39,7 +47,7 @@ systemctl status puppet
 
 ```
 
-Configure the agent puppet.conf file
+Now let us configure the agent puppet.conf file
 
 ```bash
 #/etc/puppetlabs/puppet/puppet.conf
