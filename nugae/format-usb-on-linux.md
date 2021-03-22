@@ -1,5 +1,5 @@
 ---
-title: "formatting usb key on linux OS"
+title: "format a usb storage on a linux OS"
 description: "traditional post"
 date: "2020-02-09"
 public: true
@@ -32,4 +32,6 @@ sdc      8:32   1  14.4G  0 disk
 If you want to know if it has been automatically mounted or not,
 you can use the ```mount``` command too, but notice that the last column of ```lsblk``` indicates **the mountpoint**
 
-### Format the device
+### Format the USB storage device
+
+
