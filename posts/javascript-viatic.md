@@ -86,7 +86,8 @@ Btw if you don't want to think 'lexically', another way to think about this scop
 Who created me ?
 In fact, the outer reference is always to the execution context in which the function was created.
 
-
+## TODO JS prototypal inheritance
 
 ## Acknowledgments
 The source of this memo is a udemy video course: Tony Alicea, Javascript Understanding the Weird Parts. Mainly Chapter 2: Execution Contexts and Lexical Environments
+

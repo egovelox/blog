@@ -1,8 +1,8 @@
 ---
-title: "format a usb storage on a linux OS"
+title: "usb drive operations on linux OS"
 description: "traditional post"
 date: "2020-02-09"
-public: true
+public: false
 ---
 
 As soon as you plugged your USB device, you can monitor using dmesg:
@@ -32,6 +32,18 @@ sdc      8:32   1  14.4G  0 disk
 If you want to know if it has been automatically mounted or not,
 you can use the ```mount``` command too, but notice that the last column of ```lsblk``` indicates **the mountpoint**
 
-### Format the USB storage device
+### Format the USB storage device - IN PROGRESS
 
+Using the fdisk utility, first list your devices partitions.
+
+```bash
+sudo fdisk -l
+``` 
+
+
+### Mount am external usb drive with right user permissions
+
+```bash
+sudo mount -o umask=0022,gid=1001,uid=1001 /dev/sdc1 $HOME/mnt
+```
 
