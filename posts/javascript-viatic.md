@@ -9,7 +9,7 @@ public: false
 
 Althoug javascript (js) is being interpreted by the JS-engine, it not happens directly : before execution, there is a creation phase, where the **global execution context** is created,then set up (imagine the 'global execution context' as a wrapper around the code you wrote), and eventually executed (your code is running inside it, line by line).
 1. the global object is set up, inside the global execution context.
-2. the 'this' object is created
+2. the 'this' variable is created pointing to a certain object ... which object ? see js-weird-functions post.
 3. the reference to the 'outer environment', if there is one, is also created)
 
 4. Last but not least, during this creation phase, you have what is called **hoisting** : a memory-space is set up for the functions and the variables that are going to be used when it starts executing the code.
@@ -73,10 +73,6 @@ function a() {
     var myVar = 2;
     b();
 }
-
-var myVar = 1;
-a();
-
 // prints out... '1'!
 ```
 
