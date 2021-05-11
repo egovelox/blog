@@ -5,9 +5,6 @@ date: "2020-10-13"
 public: false
 ---
 
-## Export VSCode settings
-Manually find your files in /Users/cunc/Library/Application Support/Code/User/
-
 ## Default <Leader> key
 In vim, the default leader key is '\'
 
@@ -26,7 +23,7 @@ cd nerdtree/start
 2. git clone http://...
 3. read the f* manual, e.g for nerdtree, :NERDTree to start
 
-## Enable key repeat inside VSCode
+## Enable key repeat inside VSCode (bash commands for MacOS)
 $ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false         # For VS Code
 $ defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
 $ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false    # For VS Codium
