@@ -23,3 +23,10 @@ git config --global alias.stt "status"
 ## Git checkout
 
 1. You can use ```git checkout -``` to checkout to the previous state (branch or commit)
+
+## Git rebase interactive
+
+``` git rebase -i HEAD~7 ```
+
+## Git pull with no merge strategy
+```git pull --rebase```

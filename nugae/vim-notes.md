@@ -12,6 +12,10 @@ In vim, the default leader key is '\'
 gt 
 gT
 
+## Delete a word
+diw (innerword)
+This can be extended, using visual mode: viwd 
+
 ## Install a plugin without a plugin-manager
 
 Since v8, vim can manage packages.
