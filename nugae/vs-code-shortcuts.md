@@ -11,6 +11,16 @@ Manually find your files in /Users/cunc/Library/Application Support/Code/User/
 ### launch shortcuts editor
 Ctrl+K Ctrl+S
 
+### Merge all windows (native tabs must be enabled)
+CMD mw
+
+### Switch between Windows
+CMD + q
+
+## Switch between editor tabs
+CMD + w (next)
+CMD + shift + w (previous)
+
 ### Toggle sidebar
 Cmd+B
 
@@ -83,13 +93,46 @@ Files Cmd+E
         "command": "workbench.action.focusActiveEditorGroup"
       },
       {
-        "key": "cmd+t",
-        "command": "workbench.action.quickSwitchWindow"
-      },
-      {
           "key": "shift shift",
           "command": "workbench.action.findInFiles"
-      }
+      },
+      {
+        "key": "cmd+q",
+        "command": "workbench.action.showNextWindowTab"
+      },
+      {
+        "key": "cmd+m cmd+w",
+        "command": "workbench.action.mergeAllWindowTabs"
+      },
+
+      {
+        "key": "cmd+w",
+        "command": "workbench.action.nextEditor",
+      },
+      {
+        "key": "shift+cmd+w",
+        "command": "workbench.action.previousEditor",
+      },
+      { // DISABLES
+        "key": "cmd+w",
+        "command": "-workbench.action.closeActiveEditor"
+      },
+      { // DISABLES
+        "key": "cmd+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
+      },
+      { // DISABLES
+        "key": "shift+cmd+w",
+        "command": "-workbench.action.closeWindow"
+      },
+      { // DISABLES
+        "key": "cmd+q",
+        "command": "-workbench.action.quit"
+      },
+      { // DISABLES
+        "key": "ctrl+w",
+        "command": "-workbench.action.switchWindow
 
 ]
 ```

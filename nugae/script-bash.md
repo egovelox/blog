@@ -25,6 +25,11 @@ Nous indiquons ici que l'on choisit le shell "bash".
 #!/bin/bash
 ```
 
+On peut aussi utiliser
+```bash
+#! /usr/bin/env bash
+```
+
 ### Le contenu du script
 Evidemment notre script aura un contenu, mais il importe peu ici. Nous plaçons simplement un 'echo':
 
