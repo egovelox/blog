@@ -25,9 +25,9 @@ Nous indiquons ici que l'on choisit le shell "bash".
 #!/bin/bash
 ```
 
-On peut aussi utiliser
+Mais ce shebang est plus portable, valant sur presque tous les OS unix
 ```bash
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 ```
 
 ### Le contenu du script
