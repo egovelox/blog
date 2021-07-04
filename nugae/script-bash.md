@@ -25,7 +25,8 @@ Nous indiquons ici que l'on choisit le shell "bash".
 #!/bin/bash
 ```
 
-Mais ce shebang est plus portable, valant sur presque tous les OS unix
+Lorsque l'exécutable est dans le `$PATH`
+ce shebang est plus portable, valant sur presque tous les OS unix
 ```bash
 #!/usr/bin/env bash
 ```
