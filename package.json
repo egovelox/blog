@@ -28,6 +28,6 @@
     "remark-slug": "^5.1.2"
   },
   "devDependencies": {
-    "serve": "^11.3.0"
+    "serve": "^14.1.1"
   }
 }
