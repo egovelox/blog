@@ -5,7 +5,7 @@ date: "2022-12-05"
 public: true
 ---
 
-Fundamental knowledge on how to perform various tests in shell scripting is. 
+Fundamental knowledge on how to perform various tests in shell scripting . 
 
 The following conditionnal pattern is ``POSIX`` compliant :
 ```sh
