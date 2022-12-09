@@ -4,7 +4,7 @@ description: "traditional post"
 date: "2020-04-02"
 public: false
 ---
-switch to user : root
+su means ``switch user`` : by default, you switch to root.
 
 tldr;
 su - username

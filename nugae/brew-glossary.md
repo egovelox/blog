@@ -5,7 +5,7 @@ date: "2022-12-04"
 public: true
 ---
 
-Homebrew is a program to install ``packages``, i.e collection of software files installed together at the same time.
+Homebrew is a program to install ``packages``, i.e collection of software-files installed together at the same time.
 
 ```bash
 brew install git
@@ -13,11 +13,11 @@ brew install git
 
 When you install a package with brew, it will it breeds the packages for you from an online repository called a ``tap``.
 
-The ``formula`` is a script defining the package's dependencies and how to install it. Some formulas contain ``bottles``, precompiled software binaries.
+The ``formula`` is a script defining the package's dependencies and how to install it. Some formulas contain ``bottles``, i.e precompiled software binaries.
 
-To keep thins clean, all files installed from a formula are stored in one directory called a ``keg``. And all kegs are sorted together in a directory called the ``Cellar``.  
+To keep things clean, all files installed from a formula are stored in one directory called a ``keg``. And all kegs are sorted together in a directory called the ``Cellar``.  
 
-``Casks`` are like formulas, but they install MacOS apps into your Applications folder instead of the Cellar.
+``Casks`` are like formulas, but they install **MacOS apps** into your ``Applications`` folder instead of the ``Cellar``.
 
 ```bash
 brew install --cask firefox

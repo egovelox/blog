@@ -1,14 +1,15 @@
 ---
-title: "Basic shell tests"
+title: "how to edit a fish line"
 description: "traditional post"
 date: "2022-12-05"
 public: true
 ---
 
-Memorize how to perform various tests in shell scripting : 
+Like bash and other shells, fish includes two sets of keyboard shortcuts (or key bindings)
+
 
 The following conditionnal pattern is ``POSIX`` compliant :
-```bash
+```sh
 if [ condition ]; then
   do something
 else 
@@ -17,14 +18,14 @@ fi
 ```
 
 Test if a command does not exists : -x means ``executable``.
-```bash
+```sh
 if ! [ -x  $(command -v git)]; then
   echo "Warning: git command is not found"
 fi
 ```
 
 Test if a file (remember, a unix file can be anything) exists : -e means ``existing``.
-```bash
+```sh
 if ! [ -e  filename ] then
   echo "Warning: filename is not found"
 fi
@@ -34,19 +35,10 @@ To be more precise, use ``-d`` or ``-f`` (``directory``, regular ``file``)
 
 
 
-Note: In a fish shell script, syntax would be much simpler :
-
-```bash
-if test -d $HOME/DEV/rust
-  set -l FOO bar
-	set -gx FIZ buzz
-else
-	set -gx BAR foo
-end
-```
 
 
 
 
 Source : https://linuxconfig.org/bash-scripting-cheat-sheet
+
 
