@@ -9,7 +9,7 @@ We commonly use ```aws configure``` to connect to Amazon via aws-CLI.
 
 But entering Access Key Id and Secret key, or storing them in bash variable or file, is not completely safe, nore handy. 
 
-Let's try to connect AWS using another [https://github.com/99designs/aws-vault](CLI tool): enter ```aws-vault```.
+Let's try to connect AWS using another [CLI tool](https://github.com/99designs/aws-vault): enter ```aws-vault```.
 
 ### Requirements
 
