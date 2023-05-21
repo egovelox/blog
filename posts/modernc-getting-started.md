@@ -39,7 +39,7 @@ int main(void) {
 - ``-o`` store the **compiler output** in a file named `getting-started`
 
 ```bash
-gcc -std=c99 -Wall -lm -o getting-started getting-started.c
+gcc -std=c17 -Wall -lm -o getting-started getting-started.c
 ```
 
 
