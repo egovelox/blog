@@ -9,7 +9,7 @@ public: true
 
 La faculté de mouvement, dans vim, est séparée de l'édition de texte par les touches ``Esc`` pour en sortir, et par diverses touches comme `i` (insert) pour y entrer. Passer d'une faculté à l'autre, càd faire l'aller retour entre i et Esc, peut sembler fastidieux. 
 
-Pour éviter cette lourdeur, on peut remap la touche Esc sur une autre combinaison de touches. 'kj' est une possibilité. ``Capslock`` en est une autre.
+Pour éviter cette lourdeur, on peut remap la touche Esc sur une autre combinaison de touches. ``kj`` est une possibilité. ``Capslock`` en est une autre.
 
 ```sh
 # dans .vimrc par ex
