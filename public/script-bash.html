@@ -82,18 +82,21 @@
 <p>Le SHEBANG permet d'indiquer le shell que l'on choisit pour exécuter notre script.
 Nous indiquons ici que l'on choisit le shell "bash".</p>
 <pre><code class="hljs language-bash"><span class="hljs-meta">#!/bin/bash</span></code></pre>
+<p>Lorsque l'exécutable est dans le <code>$PATH</code>
+ce shebang est plus portable, valant sur presque tous les OS unix</p>
+<pre><code class="hljs language-bash"><span class="hljs-meta">#!/usr/bin/env bash</span></code></pre>
 <h3 id="le-contenu-du-script">Le contenu du script</h3>
 <p>Evidemment notre script aura un contenu, mais il importe peu ici. Nous plaçons simplement un 'echo':</p>
 <pre><code class="hljs language-bash"><span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-string">"Le script a bien été exécuté"</span></code></pre>
 <h3 id="les-droits-dexécution">Les droits d'exécution</h3>
-<p>Sous UNIX, un script bash ne pourra être exécuté par l'utilisateur, que si ce dernier possède bien les droits d'exécution sur le script. </p>
+<p>Sous UNIX, un script bash ne pourra être exécuté par l'utilisateur, que si ce dernier possède bien les droits d'exécution sur le script.</p>
 <p>Donnons-nous donc les droits d'exécution sur notre script, en envoyant dans notre console (pas dans le script lui-même) la commande suivante :</p>
 <pre><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> sudo chmod 755 /chemin/vers/monScript.sh</span></code></pre>
 <h3 id="le-lancement-du-script">Le lancement du script</h3>
 <p>Soit le lancer depuis le repértoire où il se trouve:</p>
 <pre><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /chemin/vers/monScript.sh &#x26;&#x26; ./monScript.sh</span></code></pre>
-<p>Soit le lancer sans considération du répertoire; nous devrons alors auparavant inclure le répertoire du script dans notre variable d'environnement PATH : </p>
+<p>Soit le lancer sans considération du répertoire; nous devrons alors auparavant inclure le répertoire du script dans notre variable d'environnement PATH :</p>
 <pre><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">export</span> PATH=PATH:<span class="hljs-variable">$HOME</span>/bin</span>
 <span class="hljs-meta">$</span><span class="bash"> monScript.sh</span></code></pre>
 
@@ -107,7 +110,8 @@ Nous indiquons ici que l'on choisit le shell "bash".</p>
       .initHighlightingOnLoad();
   </script>
 
-    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>
+    <script src="./js/insert-footer-date.js"></script>
   </body>
 </html>

@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="traditional post">
+      <title>Transfer file to android from PC via termux</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,28 +68,34 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1>Articles</h1>
+  <article>
+    <header>
+      <h1>Transfer file to android from PC via termux</h1>
     </header>
+    <div class="markdown-body">
+      <p>How to transfer a file from a PC computer to your android via termux:</p>
+<p>In termux</p>
+<pre><code class="hljs language-bash">    sshd
+    <span class="hljs-comment"># Set a temporary passwd or connection won't be allowed</span>
+    passwd</code></pre>
+<p>From your PC</p>
+<pre><code class="hljs language-bash">    <span class="hljs-comment"># no user needed, since termux is mono-user</span>
+    scp -P 8022 ./Documents/my_file 192.168.2.209:/sdcard/Download/
+    <span class="hljs-comment"># N.B this sdcard in the path is the primary storage</span>
+    <span class="hljs-comment"># The permission to storage must be allowed inside termux settings</span></code></pre>
+<p>In termux again</p>
+<pre><code class="hljs language-bash">    pkill sshd</code></pre>
+<p>You're all done !</p>
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="modernc-getting-started"><span class="indexPostDate">2023-05-21</span><span class="indexPostTitle">Modern C: getting started</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="puppet_basic_install"><span class="indexPostDate">2021-01-20</span><span class="indexPostTitle">Puppet server/agent conf</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="postgres"><span class="indexPostDate">2020-03-27</span><span class="indexPostTitle">Postgres server conf</span></a>
-      </li>
-    
-    </ul>
+    </div>
+  </article>
 
-  </section>
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>

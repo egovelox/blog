@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="traditional post">
+      <title>Basic shell tests</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,28 +68,45 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1>Articles</h1>
+  <article>
+    <header>
+      <h1>Basic shell tests</h1>
     </header>
+    <div class="markdown-body">
+      <p>Memorize how to perform various tests in shell scripting :</p>
+<p>The following conditionnal pattern is <code>POSIX</code> compliant :</p>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> [ condition ]; <span class="hljs-keyword">then</span>
+  <span class="hljs-keyword">do</span> something
+<span class="hljs-keyword">else</span> 
+  <span class="hljs-keyword">do</span> other thing
+<span class="hljs-keyword">fi</span></code></pre>
+<p>Test if a command does not exists : -x means <code>executable</code>.</p>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> ! [ -x  $(<span class="hljs-built_in">command</span> -v git)]; <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">"Warning: git command is not found"</span>
+<span class="hljs-keyword">fi</span></code></pre>
+<p>Test if a file (remember, a unix file can be anything) exists : -e means <code>existing</code>.</p>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> ! [ -e  filename ] <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">"Warning: filename is not found"</span>
+<span class="hljs-keyword">fi</span></code></pre>
+<p>To be more precise, use <code>-d</code> or <code>-f</code> (<code>directory</code>, regular <code>file</code>)</p>
+<p>Note: In a fish shell script, syntax would be much simpler :</p>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> -d <span class="hljs-variable">$HOME</span>/DEV/rust
+  <span class="hljs-built_in">set</span> -l FOO bar
+	<span class="hljs-built_in">set</span> -gx FIZ buzz
+<span class="hljs-keyword">else</span>
+	<span class="hljs-built_in">set</span> -gx BAR foo
+end</code></pre>
+<p>Source : <a href="https://linuxconfig.org/bash-scripting-cheat-sheet">https://linuxconfig.org/bash-scripting-cheat-sheet</a></p>
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="modernc-getting-started"><span class="indexPostDate">2023-05-21</span><span class="indexPostTitle">Modern C: getting started</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="puppet_basic_install"><span class="indexPostDate">2021-01-20</span><span class="indexPostTitle">Puppet server/agent conf</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="postgres"><span class="indexPostDate">2020-03-27</span><span class="indexPostTitle">Postgres server conf</span></a>
-      </li>
-    
-    </ul>
+    </div>
+  </article>
 
-  </section>
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>

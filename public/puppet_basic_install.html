@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="devops post">
+      <title>Puppet server/agent conf</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,28 +68,124 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1>Articles</h1>
+  <article>
+    <header>
+      <h1>Puppet server/agent conf</h1>
     </header>
+    <div class="markdown-body">
+      <h2 id="prerequisits">Prerequisits</h2>
+<p>You should register the dnsnames of your machines in your registrar,</p>
+<p>or use a mapping of your IP inside /etc/hosts.</p>
+<p>Throughout this example, I use :</p>
+<ul>
+<li>pupmaster.egovelox.com for the server,</li>
+<li>pupagent.egovelox.com for my first agent.</li>
+</ul>
+<h2 id="install-on-ubuntu-1804">Install on ubuntu 18.04</h2>
+<p>You can find debian-based packages on [https://apt.puppetlabs.com]*https://apt.puppetlabs.com)</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># in your homedir, </span>
+<span class="hljs-comment"># replace the right pkg and version, for agent or server</span>
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="modernc-getting-started"><span class="indexPostDate">2023-05-21</span><span class="indexPostTitle">Modern C: getting started</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="puppet_basic_install"><span class="indexPostDate">2021-01-20</span><span class="indexPostTitle">Puppet server/agent conf</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="postgres"><span class="indexPostDate">2020-03-27</span><span class="indexPostTitle">Postgres server conf</span></a>
-      </li>
-    
-    </ul>
+wget https://apt.puppetlabs.com/puppet7-release-bionic.deb
+sudo dpkg -i puppet7-release-bionic.deb
+sudo apt update
+</code></pre>
+<p>Now you can find and install the latest versions with :</p>
+<pre><code class="hljs language-bash">apt-cache search ^puppet
+</code></pre>
+<p>After your apt-installs, modify your PATH and add to it:</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment">#inside .bashrc or your shell conf</span>
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-string">"/opt/puppetlabs/bin/"</span></code></pre>
+<p>check if puppet is not running on the server nore on the agent,</p>
+<p>and if it is, stop it.</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># on server</span>
+systemctl status puppetserver
+systemctl status puppet
 
-  </section>
+<span class="hljs-comment"># on agent</span>
+systemctl status puppet
+</code></pre>
+<p>Now let us configure the agent puppet.conf file</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment">#/etc/puppetlabs/puppet/puppet.conf</span>
+
+[main]
+server = pupmaster.egovelox.com
+certname = pupagent.egovelox.com
+</code></pre>
+<p>Configure the server puppet.conf file</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment">#/etc/puppetlabs/puppet/puppet.conf</span>
+
+[main]
+server = pupmaster.egovelox.com
+certname = pupmaster.egovelox.com
+
+[server]
+vardir = ...
+logdir = ...
+rundir = ...
+pidfile = ...
+codedir = ...
+dns_alt_names = pupmaster.egovelox.com
+</code></pre>
+<h2 id="setup-the-ssl-certificates">Setup the SSL certificates</h2>
+<p>Start puppetserver <strong>on the server</strong> :</p>
+<pre><code class="hljs language-bash">systemctl start puppetserver
+</code></pre>
+<p>and simply run :</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># use -h if needed</span>
+
+puppetserver ca setup
+</code></pre>
+<p>Now the server is ready, let's <strong>switch to the agent</strong> and start it:</p>
+<pre><code class="hljs language-bash">systemctl start puppet
+</code></pre>
+<p>Then try to run :</p>
+<pre><code class="hljs language-bash">puppet agent --<span class="hljs-built_in">test</span>
+
+...
+...
+Could not fetch certificate from CA server; you might still need to sign this agent certificate</code></pre>
+<p><strong>Back on the server</strong>, we should see the pending certificate :</p>
+<pre><code class="hljs language-bash">puppetserver ca list
+</code></pre>
+<p>Now you can sign it with the following command :</p>
+<pre><code class="hljs language-bash">puppetserver ca sign --certname pupagent.egovelox.com
+</code></pre>
+<p>Back <strong>on the agent</strong> , check again :</p>
+<pre><code class="hljs language-bash">puppet agent --<span class="hljs-built_in">test</span>
+</code></pre>
+<p>and you should be done for the basic install.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>You might be interested with the following <strong>puppet docs</strong> to get familiar with this tool :</p>
+<ul>
+<li>
+<p>Important directories and files
+<a href="https://puppet.com/docs/puppet/7.3/dirs_important_directories.html">https://puppet.com/docs/puppet/7.3/dirs_important_directories.html
+</a></p>
+</li>
+<li>
+<p>Beginner's guide to writing modules
+<a href="https://puppet.com/docs/puppet/7.3/bgtm.html">https://puppet.com/docs/puppet/7.3/bgtm.html</a></p>
+</li>
+<li>
+<p>Catalog of modules
+<a href="https://forge.puppet.com/">https://forge.puppet.com/</a></p>
+</li>
+<li>
+<p>Publishing modules on the Puppet Forge
+<a href="https://docs.huihoo.com/puppet/puppet/3/reference/modules_publishing.html">https://docs.huihoo.com/puppet/puppet/3/reference/modules_publishing.html</a></p>
+</li>
+</ul>
+
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>

@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="traditional post">
+      <title>Brew glossary</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,28 +68,43 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1>Articles</h1>
+  <article>
+    <header>
+      <h1>Brew glossary</h1>
     </header>
+    <div class="markdown-body">
+      <p>Homebrew is a program to install <code>packages</code>, i.e collection of software-files installed together at the same time.</p>
+<pre><code class="hljs language-bash">brew install git</code></pre>
+<p>When you install a package with brew, it will it breeds the packages for you from an online repository called a <code>tap</code>.</p>
+<p>The <code>formula</code> is a script defining the package's dependencies and how to install it. Some formulas contain <code>bottles</code>, i.e precompiled software binaries.</p>
+<p>To keep things clean, all files installed from a formula are stored in one directory called a <code>keg</code>. And all kegs are sorted together in a directory called the <code>Cellar</code>.</p>
+<p><code>Casks</code> are like formulas, but they install <strong>MacOS apps</strong> into your <code>Applications</code> folder instead of the <code>Cellar</code>.</p>
+<pre><code class="hljs language-bash">brew install --cask firefox</code></pre>
+<p>Helpful commands :</p>
+<pre><code class="hljs language-bash">brew list
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="modernc-getting-started"><span class="indexPostDate">2023-05-21</span><span class="indexPostTitle">Modern C: getting started</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="puppet_basic_install"><span class="indexPostDate">2021-01-20</span><span class="indexPostTitle">Puppet server/agent conf</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="postgres"><span class="indexPostDate">2020-03-27</span><span class="indexPostTitle">Postgres server conf</span></a>
-      </li>
-    
-    </ul>
+brew info git
 
-  </section>
+brew cat git</code></pre>
+<p>Other useful commands :</p>
+<pre><code class="hljs language-bash">brew uninstall git
+
+brew upgrade git
+
+brew switch git 2.5.0
+
+brew list --versions git</code></pre>
+<p>https://brew.sh/</p>
+
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>

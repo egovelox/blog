@@ -90,7 +90,7 @@
 <pre><code class="hljs language-bash">sudo su - postgres psql</code></pre>
 <p>You can issue the query :</p>
 <pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span> version();</code></pre>
-<p>and this other : </p>
+<p>and this other :</p>
 <pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> pg_roles;</code></pre>
 <p>You're in. Now be safe, just <strong>add a password for the postgres user</strong> :</p>
 <pre><code class="hljs language-sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> postgres PASSWORD <span class="hljs-string">'myPassword'</span>;</code></pre>
@@ -122,9 +122,9 @@ Success. You can now start the database server using:
 
     /usr/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
 </code></pre>
-<p>To start the PGSQL server, now you can either : </p>
+<p>To start the PGSQL server, now you can either :</p>
 <ol>
-<li>as user postgres, run the latter (adding &#x26;) </li>
+<li>as user postgres, run the latter (adding &#x26;)</li>
 <li>or just prefer, from your normal account :</li>
 </ol>
 <pre><code class="hljs language-bash">sudo systemctl start postgresql &#x26;&#x26; systemctl <span class="hljs-built_in">enable</span> postgresql</code></pre>
@@ -139,10 +139,10 @@ backups  data  initdb_postgresql.log  logfile
 2020-03-27 04:07:51.773 CET [16656] LOG:  redirecting <span class="hljs-built_in">log</span> output to logging collector process
 2020-03-27 04:07:51.773 CET [16656] HINT:  Future <span class="hljs-built_in">log</span> output will appear <span class="hljs-keyword">in</span> directory <span class="hljs-string">"log"</span>.</code></pre>
 <h2 id="configure-the-server">Configure the server</h2>
-<p>My version of CentOS 8 (but note that it might not always be so) provided <strong>firewalld</strong> by default. So first of all,open PSQL default port (<strong>5432</strong>) : </p>
+<p>My version of CentOS 8 (but note that it might not always be so) provided <strong>firewalld</strong> by default. So first of all,open PSQL default port (<strong>5432</strong>) :</p>
 <pre><code class="hljs language-bash">sudo firewalld-cmd --zone=public --permanent --add-port 5432/tcp 
 sudo firewall-cmd --reload</code></pre>
-<p>Now we need to configure how PGSQL allows local or distant connections to databases. Two files are needed here, in the <strong>PGSQL instance directory /var/lib/pgsql/data/</strong> : </p>
+<p>Now we need to configure how PGSQL allows local or distant connections to databases. Two files are needed here, in the <strong>PGSQL instance directory /var/lib/pgsql/data/</strong> :</p>
 <ol>
 <li><strong>postgresql.conf</strong></li>
 <li><strong>pg_hba.conf</strong> (host-based-authentication)</li>
@@ -152,13 +152,13 @@ sudo firewall-cmd --reload</code></pre>
                                         <span class="hljs-comment"># comma-separated list of addresses;</span>
                                         <span class="hljs-comment"># defaults to 'localhost'; use '*' for all</span>
                                         <span class="hljs-comment"># (change requires restart)</span></code></pre>
-<p>Be aware, <strong>here PGSQL needs a restart</strong> : </p>
+<p>Be aware, <strong>here PGSQL needs a restart</strong> :</p>
 <pre><code class="hljs language-bash">sudo systemctl restart postgresql</code></pre>
 <p>Let's now assume that our machine runs behind a router, with a static address.
-Here, using 0.0.0.0/0, PGSQL instance should be able to get a dialog with any machine from the outside, </p>
+Here, using 0.0.0.0/0, PGSQL instance should be able to get a dialog with any machine from the outside,</p>
 <ol>
-<li>on all databases, </li>
-<li>as long as the user is postgres </li>
+<li>on all databases,</li>
+<li>as long as the user is postgres</li>
 <li>and password is valid (we use md5 to encrypt it along the wire).</li>
 </ol>
 <pre><code class="hljs language-bash"><span class="hljs-comment"># TYPE  DATABASE        USER            ADDRESS                 METHOD</span>
@@ -175,10 +175,10 @@ host    all             all             ::1/128                 ident
 <span class="hljs-built_in">local</span>   replication     all                                     peer
 host    replication     all             127.0.0.1/32            md5
 host    replication     all             ::1/128                 md5</code></pre>
-<p>Be aware, <strong>here PGSQL needs a reload</strong> : </p>
+<p>Be aware, <strong>here PGSQL needs a reload</strong> :</p>
 <pre><code class="hljs language-bash">sudo systemctl reload postgresql</code></pre>
-<p><strong>And its'all done</strong> (for the 'basics' of course) ! </p>
-<p>Choose safety, in your router map a different port to 5432. Now you'll get remote access to your databases with the following parameters : </p>
+<p><strong>And its'all done</strong> (for the 'basics' of course) !</p>
+<p>Choose safety, in your router map a different port to 5432. Now you'll get remote access to your databases with the following parameters :</p>
 <pre><code class="hljs language-bash">user: postgres
 passwd : the pass you chose
 address : your public IP
@@ -195,7 +195,8 @@ database : a default one is postgres</code></pre>
       .initHighlightingOnLoad();
   </script>
 
-    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>
+    <script src="./js/insert-footer-date.js"></script>
   </body>
 </html>
