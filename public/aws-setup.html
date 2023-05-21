@@ -76,11 +76,12 @@
       <h1>AWS connection with AWS-vault</h1>
     </header>
     <div class="markdown-body">
-      <p>Usually we use <code>aws configure</code> to connect to Amazon via aws-CLI. But entering Access Key Id and Secret key, or storing them in bash variable or file, is not completely safe nore handy.</p>
-<p>That's why we want to connect to AWS using another CLI tool: <code>aws-vault</code>.</p>
+      <p>We commonly use <code>aws configure</code> to connect to Amazon via aws-CLI.</p>
+<p>But entering Access Key Id and Secret key, or storing them in bash variable or file, is not completely safe, nore handy.</p>
+<p>Let's try to connect AWS using another <a href="https://github.com/99designs/aws-vault">CLI tool</a>: enter <code>aws-vault</code>.</p>
 <h3 id="requirements">Requirements</h3>
 <p>an AWS IAM user, with programmatic access and with Admin permissions and MFA custom policy.
-https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html</p>
+<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html</a></p>
 <h3 id="install-and-set-up">Install and set up</h3>
 <p>Install aws-vault (with brew on MacOS), and then :</p>
 <pre><code class="hljs language-bash">aws-vault --version

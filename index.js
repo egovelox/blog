@@ -11,151 +11,148 @@ const postsDirPath = path.resolve(__dirname, 'posts');
 const nugaeDirPath = path.resolve(__dirname, 'nugae');
 const publicDirPath = path.resolve(__dirname, 'public');
 
+const permanentPages = ["about.html"]
+
 
 const getFiles = async (dirPath, fileExt = '') => {
+  const dirents = await fs.readdir(dirPath, { withFileTypes: true })
 
-    const dirents = await fs.readdir(dirPath, { withFileTypes: true });
-
-    return (
-        dirents
-        .filter(dirent => dirent.isFile())
-        .filter(dirent =>
-            fileExt.length ? dirent.name.toLowerCase().endsWith(fileExt) : true
-            )
-        // exclude permanent pages
-        .filter(dirent =>
-            dirent.name !== "about.html"
-            )
-        .map(dirent => dirent.name)
-    );
+  return dirents
+    .filter(dirent => dirent.isFile())
+    .filter(dirent =>
+        fileExt.length ? dirent.name.toLowerCase().endsWith(fileExt) : true
+        )
+    // exclude permanent pages
+    .filter(dirent => !permanentPages.includes(dirent.name))
+    .map(dirent => dirent.name)
 }
+
 
 // Removing existing files (each time we launch the ssg)
 const removeFiles = async (dirPath, fileExt) => {
-    const fileNames = await getFiles(dirPath, fileExt);
+  const fileNames = await getFiles(dirPath, fileExt)
 
-    const filesToRemove = fileNames.map(fileName =>
-            fs.unlink(path.resolve(dirPath, fileName))
-    );
-        return Promise.all(filesToRemove);
-    }
-;
+  const filesToRemove = fileNames.map(fileName =>
+    fs.unlink(path.resolve(dirPath, fileName))
+  );
+  return Promise.all(filesToRemove);
+}
+
 
 const parsePost = (fileName, fileData) => {
-    // remove the extension .md
-    const slug = path.basename(fileName, '.md');
+  // remove the extension .md
+  const slug = path.basename(fileName, '.md')
 
-    const {attributes, body} = frontMatter(fileData);
+  const {attributes, body} = frontMatter(fileData)
 
-    return {... attributes, body, slug};
-};
+  return {...attributes, body, slug}
+}
 
 
 const getPosts = async dirPath => {
+  const fileNames = await getFiles(dirPath, '.md')
 
-    const fileNames = await getFiles(dirPath, '.md');
+  const filesToRead = fileNames.map(
+    fileName => 
+    fs.readFile(path.resolve(dirPath, fileName), 'utf-8')
+  )
 
-    const filesToRead = fileNames.map(
-        fileName => 
-        fs.readFile(path.resolve(dirPath, fileName), 'utf-8')
-        );
+  const fileData = await Promise.all(filesToRead)
 
-    const fileData = await Promise.all(filesToRead);
-
-    return fileNames.map((fileName, i) => parsePost(fileName, fileData[i]));
+  return fileNames.map((fileName, i) => parsePost(fileName, fileData[i]))
 }
 
+
 const markdownToHTML = text => 
-    new Promise((resolve, reject) =>
+  new Promise((resolve, reject) =>
     remark()
-        .use(remarkHTML, {sanitize: false})
-        .use(remarkSlug)
-        .use(remarkHighlight)
-        .process(text, (err, file) =>
-        err ? reject(err) : resolve(file.contents)
-        )
-    )
-;
+      .use(remarkHTML, {sanitize: false})
+      .use(remarkSlug)
+      .use(remarkHighlight)
+      .process(text, (err, file) => err 
+        ? reject(err) 
+        : resolve(file.contents)
+      )
+  )
+
 
 // Helper function
 const getTemplatePath = name => 
-    path.resolve(__dirname, 'templates', path.format({name, ext: '.njk'}));
-
-
+  path.resolve(__dirname, 'templates', path.format({name, ext: '.njk'}))
 
 // Generate Post file, consuming the post object created by the parsePost() method.
 const createPostFile = async post => {
+  const fileData = nunjucks.render(
+    getTemplatePath('post'),
+    {
+        ...post,
+        body: await markdownToHTML(post.body)
+    }
+  )
 
-    const fileData = nunjucks.render(
-        getTemplatePath('post'),
-        {
-            ...post,
-            body: await markdownToHTML(post.body)
-        }
+  const fileName = path.format({name: post.slug, ext: '.html'})
+  const filePath = path.resolve(publicDirPath, fileName)
 
-    );
+  await fs.writeFile(filePath, fileData, 'utf-8')
 
-    const fileName = path.format({name: post.slug, ext: '.html'});
-
-    const filePath = path.resolve(publicDirPath, fileName);
-
-    await fs.writeFile(filePath, fileData, 'utf-8');
-
-    return post;
+  return post;
 
 };
 
 
 // Generate Index file
 const createIndexFile = async (posts, target) => {
-    const fileData = nunjucks.render(getTemplatePath(target), {posts});
-    const filePath = path.resolve(publicDirPath, target + '.html');
+  const fileData = nunjucks.render(getTemplatePath(target), {posts})
+  const filePath = path.resolve(publicDirPath, target + '.html')
 
-    await fs.writeFile(filePath, fileData, 'utf-8');
+  await fs.writeFile(filePath, fileData, 'utf-8')
 }
 
 
-
-
-// build runs the ssr
+// build runs the whole (re)generation
 const build = async () => {
-    // ensure the public dir exists
-    await fs.mkdir(publicDirPath, {recursive: true});
-    // delete any previously generated HTML
-    await removeFiles(publicDirPath, '.html');
+  // ensure the public dir exists
+  await fs.mkdir(publicDirPath, {recursive: true})
 
-    const posts = await getPosts(postsDirPath);
+  // delete any previously generated HTML
+  await removeFiles(publicDirPath, '.html')
 
-    const postsToCreate = posts
-        .filter(post => Boolean(post.public))
-        .map(post => createPostFile(post));
+  // generate posts
+  const posts = await getPosts(postsDirPath)
 
-    const createdPosts = await Promise.all(postsToCreate);
+  const postsToCreate = posts
+    .filter(post => Boolean(post.public))
+    .map(post => createPostFile(post))
 
-    await createIndexFile(
-        createdPosts.sort((a,b) => new Date(b.date) - new Date(a.date)),
-        "index"
-    );
+  const createdPosts = await Promise.all(postsToCreate)
 
-    const nugae = await getPosts(nugaeDirPath);
+  await createIndexFile(
+    createdPosts.sort((a,b) => new Date(b.date) - new Date(a.date)),
+    "index"
+  )
 
-    const nugaeToCreate = nugae
-        .filter(post => Boolean(post.public))
-        .map(post => createPostFile(post));
+  // generate nugae
+  const nugae = await getPosts(nugaeDirPath)
 
-    const createdNugae = await Promise.all(nugaeToCreate);
+  const nugaeToCreate = nugae
+    .filter(post => Boolean(post.public))
+    .map(post => createPostFile(post));
 
-    await createIndexFile(
-        createdNugae.sort((a,b) => new Date(b.date) - new Date(a.date)),
-        "index-nugae"
-    );
+  const createdNugae = await Promise.all(nugaeToCreate)
 
-    return [...createdPosts, ...createdNugae];
+  await createIndexFile(
+    createdNugae.sort((a,b) => new Date(b.date) - new Date(a.date)),
+    "index-nugae"
+  )
+
+  // success
+  return [...createdPosts, ...createdNugae].length
 }
+
 
 build()
-.then(created =>
-    console.log(`Build sucessful. Generated ${created.length} post(s).`))
-.catch(err => console.log(err));
-
+.then(count =>
+  console.log(`Build sucessful. Generated ${count} post(s).`)
+)
+.catch(err => console.log(err))
 
