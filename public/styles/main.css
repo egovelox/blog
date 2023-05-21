@@ -268,3 +268,7 @@ Media Queries
     right: 0.3rem;
     display: none;
 }
+
+#footer-buffer {
+    padding-bottom: 2.5rem;  
+}
