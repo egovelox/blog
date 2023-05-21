@@ -12,7 +12,7 @@ That's why we want to connect to AWS using another CLI tool: ```aws-vault```.
 ### Requirements
 
 an AWS IAM user, with programmatic access and with Admin permissions and MFA custom policy.
-https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html
+[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html)
 
 ### Install and set up
 
