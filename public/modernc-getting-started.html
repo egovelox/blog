@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <meta description="traditional-post">
-      <title>Modern C: getting started</title>
+      <title>Modern C #1 getting started</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -57,24 +57,25 @@
 
       <ul id="navbar">
         <li class="nav-item">
-          <a href="./index.html">&#9783; Articles</a>
+          <a href="./index.html">&#9783; Memos</a>
+        </li>
+        <li class="nav-item">
+          <a href="./index-nugae.html">Shenanigans</a>
         </li>
         <li class="nav-item">
           <a href="./about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="./index-nugae.html">Nugae</a>
         </li>
       </ul>
     </nav>
     
   <article>
     <header>
-      <h1>Modern C: getting started</h1>
+      <h1>Modern C #1 getting started</h1>
     </header>
     <div class="markdown-body">
       <h3 id="a-basic-program">A basic program</h3>
-<pre><code class="hljs language-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&#x3C;stdlib.h></span></span>
+<pre><code class="hljs language-c"><span class="hljs-comment">// getting.started.c</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&#x3C;stdlib.h></span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&#x3C;stdio.h></span></span>
 
 <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
@@ -101,7 +102,7 @@
 <pre><code class="hljs language-bash">gcc -std=c17 -Wall -lm -o getting-started getting-started.c</code></pre>
 <h3 id="execute">Execute</h3>
 <pre><code class="hljs language-bash">./getting-started</code></pre>
-<p>This basic program should <code>print</code></p>
+<p>This basic program <code>prints</code> :</p>
 <pre><code class="hljs language-bash">element 0 is 9,         its square is 81
 element 1 is 2.9,       its square is 8.41
 element 2 is 0,         its square is 0
@@ -120,8 +121,6 @@ element 4 is 3e+25,     its square is 9e+50</code></pre>
       .initHighlightingOnLoad();
   </script>
 
-    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>
-    <script src="./js/insert-footer-date.js"></script>
   </body>
 </html>

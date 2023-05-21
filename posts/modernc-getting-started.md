@@ -1,5 +1,5 @@
 ---
-title: "Modern C: getting started"
+title: "Modern C #1 getting started"
 description: "traditional-post"
 date: "2023-05-21"
 public: true
@@ -10,6 +10,7 @@ public: true
 ### A basic program
 
 ```c
+// getting.started.c
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -50,7 +51,7 @@ gcc -std=c17 -Wall -lm -o getting-started getting-started.c
 ./getting-started
 ```
 
-This basic program should ``print``
+This basic program ``prints`` :
 
 ```bash
 element 0 is 9,         its square is 81
