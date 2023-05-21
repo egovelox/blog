@@ -22,3 +22,28 @@ To keep things clean, all files installed from a formula are stored in one direc
 ```bash
 brew install --cask firefox
 ```
+
+Helpful commands :
+
+```bash
+brew list
+
+brew info git
+
+brew cat git
+```
+
+Other useful commands : 
+
+```bash
+brew uninstall git
+
+brew upgrade git
+
+brew switch git 2.5.0
+
+brew list --versions git
+```
+
+https://brew.sh/
+
