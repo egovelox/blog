@@ -148,7 +148,7 @@ function greet(firstname, lastname, language, ...other) {
 }
 ```
 
-```ts
+```typescript
 class Queue<T> {
   private data : T[] = [];
   push(item: T) { this.data.push(item); }
@@ -196,7 +196,7 @@ compose(["1", "2", "3"])(g, f)
 ```
 
 
-```ts
+```typescript
 "use strict";
 class Queue {
     constructor() {
