@@ -7,7 +7,6 @@ public: true
 
 On peut passer longtemps à placer un footer sur une page HTML.
 L'arrivée de l'unité css 'vh' a pu considérablement simplifier les choses.
-Voici ce qu'il faudra tâcher de retenir : 
 
 ```css
 html{
