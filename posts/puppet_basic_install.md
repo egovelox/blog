@@ -16,7 +16,8 @@ Throughout this example, I use :
 - pupagent.egovelox.com for my first agent.
 
 ## Install on ubuntu 18.04
-You can find debian-based packages on https://apt.puppetlabs.com
+You can find debian-based packages on [https://apt.puppetlabs.com]*https://apt.puppetlabs.com)
+
 ```bash
 # in your homedir, 
 # replace the right pkg and version, for agent or server
@@ -128,17 +129,17 @@ and you should be done for the basic install.
 You might be interested with the following **puppet docs** to get familiar with this tool : 
 
 - Important directories and files
-https://puppet.com/docs/puppet/7.3/dirs_important_directories.html
+[https://puppet.com/docs/puppet/7.3/dirs_important_directories.html
+](https://puppet.com/docs/puppet/7.3/dirs_important_directories.html)
 
 - Beginner's guide to writing modules
-https://puppet.com/docs/puppet/7.3/bgtm.html
-
+[https://puppet.com/docs/puppet/7.3/bgtm.html](https://puppet.com/docs/puppet/7.3/bgtm.html
+)
 - Catalog of modules 
-https://forge.puppet.com/
+[https://forge.puppet.com/](https://forge.puppet.com/)
 
 - Publishing modules on the Puppet Forge
-https://docs.huihoo.com/puppet/puppet/3/reference/modules_publishing.html
-
+[https://docs.huihoo.com/puppet/puppet/3/reference/modules_publishing.html](https://docs.huihoo.com/puppet/puppet/3/reference/modules_publishing.html)
 
 
 

@@ -68,7 +68,7 @@ const getPosts = async dirPath => {
 const markdownToHTML = text => 
     new Promise((resolve, reject) =>
     remark()
-        .use(remarkHTML)
+        .use(remarkHTML, {sanitize: false})
         .use(remarkSlug)
         .use(remarkHighlight)
         .process(text, (err, file) =>
