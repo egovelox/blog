@@ -52,7 +52,7 @@ gcc -std=c99 -Wall -lm -o getting-started getting-started.c
 
 This basic program should ``print``
 
-```
+```bash
 element 0 is 9,         its square is 81
 element 1 is 2.9,       its square is 8.41
 element 2 is 0,         its square is 0
