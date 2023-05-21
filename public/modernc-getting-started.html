@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="traditional-post">
+      <title>Modern C: getting started</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,28 +68,57 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1>Articles</h1>
+  <article>
+    <header>
+      <h1>Modern C: getting started</h1>
     </header>
+    <div class="markdown-body">
+      <h3 id="a-basic-program">A basic program</h3>
+<pre><code class="hljs language-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&#x3C;stdlib.h></span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&#x3C;stdio.h></span></span>
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="modernc-getting-started"><span class="indexPostDate">2023-05-21</span><span class="indexPostTitle">Modern C: getting started</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="puppet_basic_install"><span class="indexPostDate">2021-01-20</span><span class="indexPostTitle">Puppet server/agent conf</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="postgres"><span class="indexPostDate">2020-03-27</span><span class="indexPostTitle">Postgres server conf</span></a>
-      </li>
-    
-    </ul>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+  <span class="hljs-keyword">double</span> A[<span class="hljs-number">5</span>] = {
+    [<span class="hljs-number">0</span>] = <span class="hljs-number">9.0</span>,
+    [<span class="hljs-number">1</span>] = <span class="hljs-number">2.9</span>,
+    [<span class="hljs-number">4</span>] = <span class="hljs-number">3.E+25</span>,
+    [<span class="hljs-number">3</span>] = <span class="hljs-number">.00007</span>,
+  };
 
-  </section>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> i = <span class="hljs-number">0</span>; i &#x3C; <span class="hljs-number">5</span>; ++i) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"element %zu is %g, \tits square is %g\n"</span>,
+           i,
+           A[i],
+           A[i] * A[i]);
+  }
+}</code></pre>
+<h3 id="compile">Compile</h3>
+<ul>
+<li><code>-Wall</code> warn us about anything that is unusual</li>
+<li><code>-lm</code> add some standard mathematical functions if neccessary</li>
+<li><code>-o</code> store the <strong>compiler output</strong> in a file named <code>getting-started</code></li>
+</ul>
+<pre><code class="hljs language-bash">gcc -std=c17 -Wall -lm -o getting-started getting-started.c</code></pre>
+<h3 id="execute">Execute</h3>
+<pre><code class="hljs language-bash">./getting-started</code></pre>
+<p>This basic program should <code>print</code></p>
+<pre><code class="hljs language-bash">element 0 is 9,         its square is 81
+element 1 is 2.9,       its square is 8.41
+element 2 is 0,         its square is 0
+element 3 is 7e-05,     its square is 4.9e-09
+element 4 is 3e+25,     its square is 9e+50</code></pre>
+<h3 id="acknowledgments">Acknowledgments</h3>
+<p>The source of this memo is from the 'Modern C' book, by Jens Gustedt, Manning 2020.</p>
+
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>

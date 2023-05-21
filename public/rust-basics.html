@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="traditional post">
+      <title>Intro to Rust</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,28 +68,73 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1>Articles</h1>
+  <article>
+    <header>
+      <h1>Intro to Rust</h1>
     </header>
+    <div class="markdown-body">
+      <h2 id="install-on-linux">Install on Linux</h2>
+<p>The recommanded way is to use <strong>Rustup Toolchain Manager</strong> - so you can update or uninstall rust more easily.</p>
+<p>A bunch of new files will be added</p>
+<ol>
+<li>$HOME/.cargo</li>
+<li>$HOME/.rustup</li>
+</ol>
+<p>If you want to change this location, first export following variables in your .bashrc</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># set up Rust toolchain</span>
+<span class="hljs-built_in">export</span> RUSTUP_HOME=<span class="hljs-string">"/your_custom_path/.rustup"</span>
+<span class="hljs-built_in">export</span> CARGO_HOME=<span class="hljs-string">"/your_custom_path/.cargo"</span></code></pre>
+<p>And your bash config files will be modified (essentially for updating the PATH).</p>
+<pre><code class="hljs language-bash">curl --proto <span class="hljs-string">'=https'</span> --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<p>You can then logout, and come back see what is your current installation :</p>
+<pre><code class="hljs language-bash">rustup show
+rustc --version
+cargo --version
+ls <span class="hljs-variable">$SHOME</span>/.cargo/bin</code></pre>
+<p>If at any point, you would like to update or uninstall</p>
+<pre><code class="hljs language-bash">rustup update
+rustup self uninstall</code></pre>
+<h2 id="hello-rust-">Hello Rust !</h2>
+<pre><code class="hljs language-bash">mkdir rust-projects &#x26;&#x26; <span class="hljs-built_in">cd</span> rust-projects
+cargo new hello-rust
+<span class="hljs-built_in">cd</span> hello-rust
+cargo build</code></pre>
+<p>Our rust entry point is <code>./src/main.rs</code>, containing our main function.</p>
+<p>Running <code>cargo build</code>, by default our project will build in <strong>debug mode</strong>. In fact, our new binary file is located in the generated directory <code>./target/debug/hello-rust</code>. It now can be executed as it is.</p>
+<p>If you want a single command to compile and run, simply use <code>cargo run</code>.</p>
+<h2 id="install-on-macos">Install on MacOS</h2>
+<p>The recommanded way is to use <strong>Rustup Toolchain Manager</strong> - so you can update or uninstall rust more easily.</p>
+<p>A bunch of new files will be added</p>
+<ol>
+<li><code>$HOME/.cargo</code></li>
+<li><code>$HOME/.rustup</code></li>
+</ol>
+<p>If you want to change this location, first export following variables in your .bashrc</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># set up Rust toolchain</span>
+<span class="hljs-built_in">export</span> RUSTUP_HOME=<span class="hljs-string">"/your_custom_path/.rustup"</span>
+<span class="hljs-built_in">export</span> CARGO_HOME=<span class="hljs-string">"/your_custom_path/.cargo"</span></code></pre>
+<p>And your bash config files will be modified (essentially for updating the PATH).</p>
+<pre><code class="hljs language-bash">curl --proto <span class="hljs-string">'=https'</span> --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<p>You can then logout, and coming back see what is your current installation :</p>
+<pre><code class="hljs language-bash">rustup show
+rustc --version
+cargo --version
+ls <span class="hljs-variable">$SHOME</span>/.cargo/bin</code></pre>
+<p>If at any point, you would like to update or uninstall</p>
+<pre><code class="hljs language-bash">rustup update
+rustup self uninstall</code></pre>
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="modernc-getting-started"><span class="indexPostDate">2023-05-21</span><span class="indexPostTitle">Modern C: getting started</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="puppet_basic_install"><span class="indexPostDate">2021-01-20</span><span class="indexPostTitle">Puppet server/agent conf</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="postgres"><span class="indexPostDate">2020-03-27</span><span class="indexPostTitle">Postgres server conf</span></a>
-      </li>
-    
-    </ul>
+    </div>
+  </article>
 
-  </section>
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>

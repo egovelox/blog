@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="traditional post">
+      <title>make FAT32 disk on linux OS</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,28 +68,154 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1>Articles</h1>
+  <article>
+    <header>
+      <h1>make FAT32 disk on linux OS</h1>
     </header>
+    <div class="markdown-body">
+      <p>As soon as you plugged your USB device, you can monitor using dmesg:</p>
+<pre><code class="hljs language-bash">sudo dmesg | tail
+</code></pre>
+<p>You can also use the following command to know the entry in <code>/dev</code> filesystem (here sdc):</p>
+<pre><code class="hljs language-bash">sudo lsblk
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="modernc-getting-started"><span class="indexPostDate">2023-05-21</span><span class="indexPostTitle">Modern C: getting started</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="puppet_basic_install"><span class="indexPostDate">2021-01-20</span><span class="indexPostTitle">Puppet server/agent conf</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="postgres"><span class="indexPostDate">2020-03-27</span><span class="indexPostTitle">Postgres server conf</span></a>
-      </li>
-    
-    </ul>
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 119.2G  0 disk
+├─sda1   8:1    0    40G  0 part /
+├─sda2   8:2    0    70G  0 part /home
+└─sda3   8:3    0   9.2G  0 part [SWAP]
+sdb      8:16   0 298.1G  0 disk
+└─sdb1   8:17   0 298.1G  0 part /home/userX/hd
+sdc      8:32   1  14.4G  0 disk
+├─sdc1   8:33   1   621M  0 part
+├─sdc2   8:34   1    61M  0 part
+└─sdc3   8:35   1   300K  0 part
+</code></pre>
+<p>If you want to know if it has been automatically mounted or not,
+you can use the <code>mount</code> command too, but notice that the last column of <code>lsblk</code> indicates <strong>the mountpoint</strong>. For more details on filesystems, add a -f flag <code>lsblk -f</code></p>
+<h3 id="delete-and-renew-partitions">Delete and renew partitions</h3>
+<p>After you located the drive, and made sure it is not mounted, we can use the <code>fdisk</code> utility.</p>
+<pre><code class="hljs language-bash">sudo fdisk /dev/sdg
+Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): p
+ 
+Disk /dev/sdg: 3874 MB, 3874488320 bytes
+42 heads, 8 sectors/track, 22521 cylinders, total 7567360 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0006301d
+ 
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdg1            2048     7567359     3782656    b  W95 FAT32</code></pre>
+<p>Now partition 1 can be deleted :</p>
+<pre><code class="hljs language-bash">Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): d
+Selected partition 1
+Partition 1 is deleted
+ 
+Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): p
+ 
+Disk /dev/sdg: 3874 MB, 3874488320 bytes
+42 heads, 8 sectors/track, 22521 cylinders, total 7567360 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0006301d
+ 
+   Device Boot      Start         End      Blocks   Id  System</code></pre>
+<p>Next step, create a new primary partition</p>
+<pre><code class="hljs language-bash">Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): n
+Partition <span class="hljs-built_in">type</span>:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): 
+Using default response p
+Partition number (1-4, default 1): 
+Using default value 1
+First sector (2048-7567359, default 2048): 
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-7567359, default 7567359): 
+Using default value 7567359
+Partition 1 of <span class="hljs-built_in">type</span> Linux and of size 3,6 GiB is <span class="hljs-built_in">set</span>
+ 
+Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): p
+ 
+Disk /dev/sdg: 3874 MB, 3874488320 bytes
+42 heads, 8 sectors/track, 22521 cylinders, total 7567360 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0006301d
+ 
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdg1            2048     7567359     3782656   83  Linux</code></pre>
+<p>By default, partition type will have id 83 (Linux) and should be changed to FAT32. Type <strong>t</strong> command and set partition id as <strong>b</strong>. All partition codes can be listed with <strong>L</strong> command.</p>
+<pre><code class="hljs language-bash">Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): t
+Selected partition 1
+Hex code (<span class="hljs-built_in">type</span> L to list codes): b
+Changed system <span class="hljs-built_in">type</span> of partition 1 to b (W95 FAT32)
+ 
+Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): p
+ 
+Disk /dev/sdg: 3874 MB, 3874488320 bytes
+42 heads, 8 sectors/track, 22521 cylinders, total 7567360 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0006301d
+ 
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdg1            2048     7567359     3782656    b  W95 FAT32</code></pre>
+<p>Then you can set the partition as active, to make it bootable. Type in <strong>a</strong> command and choose first partition number</p>
+<pre><code class="hljs language-bash">Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): a
+Partition number (1-4): 1
+ 
+Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): p
+ 
+Disk /dev/sdg: 3874 MB, 3874488320 bytes
+42 heads, 8 sectors/track, 22521 cylinders, total 7567360 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0006301d
+ 
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdg1   *        2048     7567359     3782656    b  W95 FAT32</code></pre>
+<p>You can now write changes to disk and exit.</p>
+<pre><code class="hljs language-bash">Command (m <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>): w
+The partition table has been altered!</code></pre>
+<h3 id="format-the-usb-storage-device-as-fat32">Format the USB storage device as FAT32</h3>
+<p>Now a FAT-32 file-system can be created on the drive. Note that you might have to install some dependencies: <code>sudo pacman -S dosfstools</code></p>
+<pre><code class="hljs language-bash">mkfs -t vfat -n MY_DRIVE_NAME /dev/sdg1</code></pre>
+<p>Now you're good to go : using the <strong>fdisk</strong> utility, list your devices partitions.</p>
+<pre><code class="hljs language-bash">sudo fdisk -l</code></pre>
+<p>Eject and reinsert your drive, it should be empty and mounted</p>
+<pre><code class="hljs language-bash">df -HT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+rootfs         rootfs     30G  5,6G   23G  20% /
+devtmpfs       devtmpfs  1,8G     0  1,8G   0% /dev
+tmpfs          tmpfs     1,8G  868K  1,8G   1% /dev/shm
+tmpfs          tmpfs     1,8G  1,3M  1,8G   1% /run
+/dev/sda1      ext2       30G  5,6G   23G  20% /
+tmpfs          tmpfs     1,8G     0  1,8G   0% /sys/fs/cgroup
+tmpfs          tmpfs     1,8G     0  1,8G   0% /media
+/dev/sdb5      ext4      204G   41G  153G  22% /home
+/dev/sdb1      ext4       20G  9,1G  9,7G  49% /var
+/dev/sdb3      ext4      4,0G  137M  3,7G   4% /tmp
+/dev/sdg1      vfat      3,7G  4,0K  3,7G   1% /run/media/dbunic/DF85-CAF4</code></pre>
+<h3 id="mount-am-external-usb-drive-with-ownership-and-permissions">Mount am external usb drive with ownership and permissions</h3>
+<p>This can be useful too :</p>
+<pre><code class="hljs language-bash">sudo mount -o <span class="hljs-built_in">umask</span>=0022,gid=1001,uid=1001 /dev/sdc1 <span class="hljs-variable">$HOME</span>/mnt</code></pre>
+<p>Source: adapted from https://www.redips.net/linux/create-fat32-usb-drive</p>
 
-  </section>
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>

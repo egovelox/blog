@@ -79,24 +79,24 @@
 <pre><code class="hljs language-sh"><span class="hljs-comment"># in .vimrc</span>
 inoremap kj &#x3C;esc> </code></pre>
 <h3 id="basiques">Basiques</h3>
-<p>Le <strong>hjkl</strong> est la base, toujours gardée sous la main. Ils permettent le mouvement simple, horizontal et vertical.</p>
-<p>Le compteur vient étendre ce mouvement: <strong>5j</strong> me mène 5 lignes plus bas.</p>
+<p>Le <code>hjkl</code> est la base, toujours gardée sous la main. Ils permettent le mouvement simple, horizontal et vertical.</p>
+<p>Le compteur vient étendre ce mouvement: <code>5j</code> me mène 5 lignes plus bas.</p>
 <p>Bien connaître le mouvement dans vim, c'est ensuite pouvoir le combiner à des actions: par exemple,
-<strong>d5j</strong> me supprime les 5 lignes qui suivent celle où je me trouve (laquelle est aussi supprimée).</p>
+<code>d5j</code> me supprime les 5 lignes qui suivent celle où je me trouve (laquelle est aussi supprimée).</p>
 <p>D'où ce <a href="https://vim-adventures.com">jeu d'aventure</a> incroyable !</p>
 <h3 id="mouvement-sur-la-ligne">Mouvement sur la ligne</h3>
 <p>On utilise 0/$ pour aller au début ou à la fin de la ligne.</p>
-<p>On utilise couramment <strong>w/W</strong> pour sauter de mot en mot. <strong>W</strong> permet de ne pas prendre ( { . et tels autres caractères pour des mots. Dans le sens arrière, on utilise <strong>b/B</strong>. Ainsi arrivé au pied d'un mot, on passe à la fin avec <strong>e/E</strong></p>
-<p>Les compteurs s'utilisent par là dessus, et <strong>3w</strong> devient : avancer de 3 mots.</p>
-<p>Dans la ligne (ou plus loin du reste) on peut avoir repéré un mot, et vouloir s'y rendre : on utilise <strong>/lemot</strong> et <strong>n/p</strong> pour naviguer entre ses occurences éventuelles.</p>
-<p>Vim a mémoire, et <strong>/Enter</strong> rappelle la dernière recherche. Si la chose cherchée est la même que sous le curseur, <strong>*</strong> suffit simplement pour trouver la prochaine occurence. </p>
-<p>Dans tout ceci, avec <strong>/</strong> on va toujours chercher devant, avec <strong>?</strong> on recherche derrière.</p>
-<p>Toujours sur la ligne, même chose pour un caractère avec <strong>f</strong> (ou <strong>F</strong> pour rejoindre un caractère qui précède le curseur) : <strong>f"</strong> par exemple, vous mène au prochain '"'. On utilise <strong>;/,</strong> pour passer d'une occurence à l'autre.</p>
-<p>Quasi synonyme de f/F, on trouve <strong>t/T</strong> (devant signifier 'til) pour arrêter le curseur <strong>juste avant</strong> le caractère recherché.</p>
+<p>On utilise couramment <code>w/W</code> pour sauter de mot en mot. <code>W</code> permet de ne pas prendre ( { . et tels autres caractères pour des mots. Dans le sens arrière, on utilise <code>b/B</code>. Ainsi arrivé au pied d'un mot, on passe à la fin avec <code>e/E</code></p>
+<p>Les compteurs s'utilisent par là dessus, et <code>3w</code> devient : avancer de 3 mots.</p>
+<p>Dans la ligne (ou plus loin du reste) on peut avoir repéré un mot, et vouloir s'y rendre : on utilise <code>/lemot</code> et <code>n/p</code> pour naviguer entre ses occurences éventuelles.</p>
+<p>Vim a mémoire, et <code>/Enter</code> rappelle la dernière recherche. Si la chose cherchée est la même que sous le curseur, <code>\</code>* suffit simplement pour trouver la prochaine occurence.</p>
+<p>Dans tout ceci, avec <code>/</code> on va toujours chercher devant, avec <code>?</code> on recherche derrière.</p>
+<p>Toujours sur la ligne, même chose pour un caractère avec <code>f</code> (ou <code>F</code> pour rejoindre un caractère qui précède le curseur) : <code>f"</code> par exemple, vous mène au prochain '"'. On utilise <code>;/,</code> pour passer d'une occurence à l'autre.</p>
+<p>Quasi synonyme de f/F, on trouve <code>t/T</code> (devant signifier 'til) pour arrêter le curseur <code>juste avant</code> le caractère recherché.</p>
 <h3 id="mouvement-vertical">Mouvement vertical</h3>
-<p>On utilise <strong>H/M/L</strong> (high, middle, low) pour le déplacement sur l'écran.
-On utilise <strong>gg/G</strong> pour le déplacement vers la première ou la dernière ligne du fichier.</p>
-<p>Le compteur est couramment employé en conjonction avec les numéros de lignes visibles à gauche. On m'enmène à la ligne 18 avec la commande <strong>18gg</strong> ou <strong>18G</strong>.</p>
+<p>On utilise <code>H/M/L</code> (high, middle, low) pour le déplacement sur l'écran.
+On utilise <code>gg/G</code> pour le déplacement vers la première ou la dernière ligne du fichier.</p>
+<p>Le compteur est couramment employé en conjonction avec les numéros de lignes visibles à gauche. On m'enmène à la ligne 18 avec la commande <code>18gg</code> ou <code>18G</code>.</p>
 <p>Fort pratique, en mode visuel (Ctrl + V) pour sélectionner une portion comprise entre deux lignes déterminées.</p>
 
     </div>
@@ -109,7 +109,8 @@ On utilise <strong>gg/G</strong> pour le déplacement vers la première ou la de
       .initHighlightingOnLoad();
   </script>
 
-    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>
+    <script src="./js/insert-footer-date.js"></script>
   </body>
 </html>

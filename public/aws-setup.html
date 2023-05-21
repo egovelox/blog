@@ -5,8 +5,8 @@
       <meta charset='utf-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta description="Egovelox notes">
-      <title>Egovelox</title>
+      <meta description="traditional post">
+      <title>AWS connection with AWS-vault</title>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
       <link rel="stylesheet" href="./styles/main.css">
       <link rel="stylesheet" href="./styles/toggle-switch.css">
@@ -68,28 +68,44 @@
       </ul>
     </nav>
     
-  <section>
-    <header class="indexTitle">
-      <h1>Articles</h1>
+  <article>
+    <header>
+      <h1>AWS connection with AWS-vault</h1>
     </header>
+    <div class="markdown-body">
+      <p>Usually we use <code>aws configure</code> to connect to Amazon via aws-CLI. But entering Access Key Id and Secret key, or storing them in bash variable or file, is not completely safe nore handy.</p>
+<p>That's why we want to connect to AWS using another CLI tool: <code>aws-vault</code>.</p>
+<h3 id="requirements">Requirements</h3>
+<p>an AWS IAM user, with programmatic access and with Admin permissions and MFA custom policy.
+https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage.html</p>
+<h3 id="install-and-set-up">Install and set up</h3>
+<p>Install aws-vault (with brew on MacOS), and then :</p>
+<pre><code class="hljs language-bash">aws-vault --version
+aws-vault add [AWS-iam-user]  // will <span class="hljs-built_in">let</span> you enter you AcessKey params</code></pre>
+<p>You then have to set up your aws config file :</p>
+<pre><code class="hljs language-bash">vim ~/.aws/config
+[profile myIamUser]
+region=use-west-3
+mfa_serial=arn... // <span class="hljs-keyword">if</span> MFA, this can be found via the AWS console.</code></pre>
+<h3 id="connect-with-aws-vault">Connect with aws-vault</h3>
+<p>The following command should log you in AWS (duration is set up to the maximum)</p>
+<pre><code class="hljs language-bash">aws-vault <span class="hljs-built_in">exec</span> myIamUser --duration=12h</code></pre>
+<p>Once we are done, we can test AWS-CLI</p>
+<pre><code class="hljs language-bash">aws s3 ls</code></pre>
+<h3 id="monitor-and-log-out">Monitor and Log out</h3>
+<pre><code class="hljs language-bash">aws-vault list
 
-    <ul id="indexList">
-    
-      <li class="indexItem">
-        <a id="indexLink" href="modernc-getting-started"><span class="indexPostDate">2023-05-21</span><span class="indexPostTitle">Modern C: getting started</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="puppet_basic_install"><span class="indexPostDate">2021-01-20</span><span class="indexPostTitle">Puppet server/agent conf</span></a>
-      </li>
-    
-      <li class="indexItem">
-        <a id="indexLink" href="postgres"><span class="indexPostDate">2020-03-27</span><span class="indexPostTitle">Postgres server conf</span></a>
-      </li>
-    
-    </ul>
+aws-vault clear [myIamUser]</code></pre>
 
-  </section>
+    </div>
+  </article>
+
+  <script src="//cdnjs.cloudfare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>
+    window
+      .hljs
+      .initHighlightingOnLoad();
+  </script>
 
     <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>

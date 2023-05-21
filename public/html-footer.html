@@ -75,7 +75,7 @@
     <div class="markdown-body">
       <p>On peut passer longtemps à placer un footer sur une page HTML.
 L'arrivée de l'unité css 'vh' a pu considérablement simplifier les choses.
-Voici ce qu'il faudra tâcher de retenir : </p>
+Voici ce qu'il faudra tâcher de retenir :</p>
 <pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span>{
     <span class="hljs-attribute">box-sizing</span>: border-box;
 }
@@ -112,7 +112,8 @@ on anticipe la hauteur du footer, car ce dernier sera en position absolute !
       .initHighlightingOnLoad();
   </script>
 
-    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Jan 2020 with &#128420;</footer>
+    <footer id="footer">&#128736;<span id="footerSignature">egovelox</span> Last updated <span id="footerSignatureDate"></span> with &#128420;</footer>
     <script src="./js/theme-switcher.js"></script>
+    <script src="./js/insert-footer-date.js"></script>
   </body>
 </html>
