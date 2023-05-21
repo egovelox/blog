@@ -1,11 +1,13 @@
 ---
-title: "modern C getting started"
+title: "Modern C: getting started"
 description: "traditional-post"
 date: "2023-05-21"
 public: true
 ---
 
-## A basic program
+
+
+### A basic program
 
 ```c
 #include <stdlib.h>
@@ -28,7 +30,9 @@ int main(void) {
 }
 ```
 
-## Compile
+
+
+### Compile
 
 - ``-Wall`` warn us about anything that is unusual
 - ``-lm`` add some standard mathematical functions if neccessary
@@ -38,7 +42,9 @@ int main(void) {
 gcc -std=c99 -Wall -lm -o getting-started getting-started.c
 ```
 
-## Execute
+
+
+### Execute
 
 ```bash
 ./getting-started
@@ -55,5 +61,5 @@ element 4 is 3e+25,     its square is 9e+50
 ```
 
 
-## Acknowledgments
+### Acknowledgments
 The source of this memo is from the 'Modern C' book, by Jens Gustedt, Manning 2020.
