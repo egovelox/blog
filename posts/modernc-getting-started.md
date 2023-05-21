@@ -10,7 +10,7 @@ public: true
 ### A basic program
 
 ```c
-// getting.started.c
+// getting-started.c
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -37,9 +37,9 @@ int main(void) {
 
 ### Compile
 
-- ``-Wall`` warn us about anything that is unusual
-- ``-lm`` add some standard mathematical functions if neccessary
-- ``-o`` store the **compiler output** in a file named `getting-started`
+- ``-Wall`` warns us about anything that is unusual
+- ``-lm`` adds some standard mathematical functions if neccessary
+- ``-o`` stores the **compiler output** in a file named `getting-started`
 
 ```bash
 gcc -std=c17 -Wall -lm -o getting-started getting-started.c
@@ -53,7 +53,7 @@ gcc -std=c17 -Wall -lm -o getting-started getting-started.c
 ./getting-started
 ```
 
-This basic program ``prints`` :
+This basic program prints :
 
 ```bash
 element 0 is 9,         its square is 81
