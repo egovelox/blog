@@ -5,6 +5,7 @@ const remark = require('remark');
 const remarkHTML = require('remark-html');
 const remarkSlug = require('remark-slug');
 const remarkHighlight = require('remark-highlight.js');
+const remarkGfm = require('remark-gfm');
 const nunjucks = require('nunjucks');
 
 const postsDirPath = path.resolve(__dirname, 'posts');
@@ -66,6 +67,7 @@ const getPosts = async dirPath => {
 const markdownToHTML = text => 
   new Promise((resolve, reject) =>
     remark()
+      .use(remarkGfm)
       .use(remarkHTML, {sanitize: false})
       .use(remarkSlug)
       .use(remarkHighlight)
