@@ -7,7 +7,7 @@ public: true
 
 
 
-``ffmpeg`` is a great tool from (Fabrice Bellard)[https://bellard.org/] described as the Open Source Multimedia System.
+``ffmpeg`` is a great tool from (https://bellard.org/)[Fabrice Bellard] described as the Open Source Multimedia System.
 
 You can install it with ``brew install ffmpeg`` and use its command-line for many things.
 
