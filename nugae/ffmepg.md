@@ -14,7 +14,7 @@ You can install it with ``brew install ffmpeg`` and use its command-line for man
 
 - merging a mute video file with its corresponding audio file. 
 
-This can be useful, as you get sometimes two separate files when fetching video content, e.g from streaming plateform, e.g using ``youtube-dl`` command-line.
+This can be useful, as you get sometimes two separate files when downloading multimedia content, especially from streaming platforms, using ``youtube-dl`` (https://github.com/ytdl-org/youtube-dl)[command-line].
 
 ```bash
 ffmpeg -i video.mp4 -i audio.mp4 -c copy output.mkv
