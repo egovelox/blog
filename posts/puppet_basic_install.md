@@ -16,7 +16,7 @@ Throughout this example, I use :
 - pupagent.egovelox.com for my first agent.
 
 ## Install on ubuntu 18.04
-You can find debian-based packages on [https://apt.puppetlabs.com]*https://apt.puppetlabs.com)
+You can find debian-based packages on [https://apt.puppetlabs.com](https://apt.puppetlabs.com)
 
 ```bash
 # in your homedir, 
