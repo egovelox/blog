@@ -1,7 +1,7 @@
 ---
 title: "Notes for Chris"
 description: "traditional post"
-date: "2020-01-22"
+date: "2023-07-10"
 public: true
 ---
 
