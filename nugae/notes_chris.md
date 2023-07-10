@@ -14,7 +14,7 @@ public: true
 le shell, un langage pour commander :
 
 ```bash
-echo $shell 
+echo $SHELL 
 # /bin/bash
 ```
 
