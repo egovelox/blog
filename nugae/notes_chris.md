@@ -5,8 +5,6 @@ date: "2023-07-10"
 public: true
 ---
 
-# Notes pour Chris
-
 ## 🦶2023 July 10
 
 ### Un terminal unix sous Linux
@@ -88,13 +86,13 @@ git clone https://...
 ### TO DO ca :
 
  - Créer un utilisateur admin (ForceMFA) dans AWS
- - Créer un utilisateur (sign-up) dans [https://github.com/](Github)
+ - Créer un utilisateur (sign-up) dans [Github](https://github.com)
  - Créer depuis une machine Linux un dossier surveillé par git, puis ``push`` sur le compte GitHub récemment créé.
  - Essayer de simplifier des commandes avec un alias git (non un alias bash)
 
 
 ### Ressources utiles
 
- - [https://www.atlassian.com/git/tutorials/git-alias](Git alias)
+ - [Git alias](https://www.atlassian.com/git/tutorials/git-alias)
 
 
