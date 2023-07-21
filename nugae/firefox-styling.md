@@ -27,8 +27,8 @@ vim ${PROFILE_DIR}/chrome/userChrome.css
 
 /* Shrink sidebar until hovered, when using Tree Style Tab. */
 :root {
-  --thin-tab-width: 50px;
-  --wide-tab-width: 50px;
+  --thin-tab-width: 58px;
+  --wide-tab-width: 58px;
 }
 
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
@@ -49,8 +49,17 @@ vim ${PROFILE_DIR}/chrome/userChrome.css
 
 Restart Firefox and you're done.
 
+In settings you can disable the tree functionnality in
+
+``Extension settings > Development > All configs``
+- uncheck autoAttach
+- uncheck syncParentTabAndOpenerTab
+
 Source : 
 
 [https://medium.com/@Aenon/firefox-hide-native-tabs-and-titlebar-f0b00bdbb88b](https://medium.com/@Aenon/firefox-hide-native-tabs-and-titlebar-f0b00bdbb88b)
 
 [https://gist.github.com/olmstadfm/d6b4d37219e957d9cdcdb3ec88952c15](https://gist.github.com/olmstadfm/d6b4d37219e957d9cdcdb3ec88952c15)
+
+[https://www.g2.com/discussions/45445-how-can-i-prevent-tree-style-tabs-from-opening-tabs-under-parent-tabs](https://www.g2.com/discussions/45445-how-can-i-prevent-tree-style-tabs-from-opening-tabs-under-parent-tabs)
+
