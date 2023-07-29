@@ -5,8 +5,11 @@ date: "2023-07-29"
 public: true
 ---
 
+These notes describe how to install the elastic stack (``elastic-search``, ``kibana``) with ``docker-compose`` on MacOS Ventura 13.2.1.
+
 
 All following content was adapted from [https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-compose-file](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-compose-file)
+
 
 ## SETUP THE DOCKER STACK
 
@@ -174,6 +177,8 @@ services:
       interval: 10s
       timeout: 10s
       retries: 120
+
+EOF
 ```
 
 
@@ -187,7 +192,7 @@ Start the docker stack :
 docker-compose up -d
 ```
 
-## DOCKER CHECKS
+## DOCKER UTILS
 
 See all docker containers :
 ```bash
@@ -204,7 +209,7 @@ Log in into a container :
 docker exec -it poc-es-flow-es01-1 /bin/bash
 ```
 
-Destroy the docker stack (except the data synced in your volumes, of course)
+Destroy the docker stack (don't worry, data will stay in place)
 ```bash
 docker-compose down
 ```
