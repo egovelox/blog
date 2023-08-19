@@ -231,11 +231,7 @@ Media Queries
     }
     .indexPostDate 
     {
-        background-color: black;
-        border: 1px solid black;
-        border-radius: 15px;
-        color: coral;
-        padding: 1px;
+        display: none;
     }
     .indexPostTitle 
     {
