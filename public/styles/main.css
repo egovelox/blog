@@ -133,8 +133,10 @@ Home Page
     background-color: black;
     border-radius: 3px;
     color: coral;
-    width: 100px;
+    /*width: 100px;*/
     padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
     display: flex;
     justify-content: center;
 }
