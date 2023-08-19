@@ -2,7 +2,7 @@
 title: "Javascript ES6: export/import "
 description: "traditional post"
 date: "2020-01-17"
-public: true
+public: false
 ---
 
 En langage javascript, la fonctionnalité d'exportation / importation permet de partitionner le code sur plusieurs fichiers. On travaille ainsi de façon modulaire, en liant l'un avec l'autre deux (ou plusieurs) fichiers .js appelés modules.
