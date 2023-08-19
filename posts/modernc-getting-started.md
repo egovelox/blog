@@ -1,5 +1,5 @@
 ---
-title: "Modern C #1 getting started"
+title: "#1 Modern C: getting started"
 description: "traditional-post"
 date: "2023-05-21"
 public: true
