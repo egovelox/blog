@@ -64,6 +64,8 @@ end
 
 Sources : 
 
+``man test``
+
 [https://linuxconfig.org/bash-scripting-cheat-sheet](https://linuxconfig.org/bash-scripting-cheat-sheet)
 
 [Bash cheatsheet](https://devhints.io/bash)
