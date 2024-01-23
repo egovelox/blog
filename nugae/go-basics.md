@@ -87,10 +87,9 @@ In a Go module
 Let's build a Go module composed of two packages: intro and main.
 
 * run command ``go mod init 'github.com/egovelox/gobasics``
-* run command ``go mod tidy`` (well, not necessary since it has no dependency yet)
 
 Let's follow this repo structure :
-```
+```sh
 
 gobasics/
   intro/
@@ -147,6 +146,7 @@ func main() {
 }
 ```
 
+* run command ``go mod tidy``
 * run command ``go run main.go``
 * run command ``go build``
 * run command ``./gobasics``
