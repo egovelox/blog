@@ -141,4 +141,20 @@ We can illustrate this with another schema.
 <img src='./images/rust_borrow_string.png'>
 
 
+## Rust stack vs heap
+
+``Rust`` is very much like ``C++``, it will put everything on the stack by default.  
+To store things on the heap you have to do so explicitly (usually by wrapping them in smart pointers like ``Box`` or ``Rc``).
+
+That's why you can read in the ``Rust book``
+
+> There's one big difference between the MyBox<T> type we're about to build  
+> and the real Box<T>: our version will not store its data on the heap. We  
+> are focusing this example on Deref, and so where the data is actually stored  
+> is less important than the pointer-like behavior.  
+
+Note however that (also as in C++) some types may "implicitly" perform heap allocations e.g. String or Vec are on-stack structs but one of the struct members is a pointer to a heap-allocated buffer.
+
+In other words, values contained within types that perform heap allocation (Box, most containers like Vec and HashMap, Arc, Rc, String, etc) go on the heap. 
+
 
