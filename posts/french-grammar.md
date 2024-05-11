@@ -70,14 +70,14 @@ On peut recenser 7 natures distinctes :
 - 〽️ Un pronom est variable. Le genre et le nombre sont des concepts qui peuvent faire varier un pronom.
 - Un pronom fait toujours référence à un nom ( le nom qui est visé est parfois présent, parfois absent de la phrase ).
 - Un pronom peut être
-  - personnel ( `je` = La personne qui vous parle, `toi` ) , 
+  - personnel ( `je` = La personne qui vous parle, `moi`, sans oublier `me` pronom personnel réfléchi ) , 
   - possessif ( `le mien`, `les nôtres` ),
   - interrogatif ( `qui ... ?` = quelle personne ... ?),
-  - démonstratif ( `ce`, `ceci`, `celui-ci`, `ceux-là` ),
-  - indéfini (`tout`, `rien`, `chacun`, `aucun`, `l'un`, `l'autre`, `un autre`, `un second`),
-  - relatif (`qui`, `où`, `dont`)
+  - démonstratif ( `c'`, `ce`, `cela`, `ceci`, `celui-ci`, `ceux-là` ),
+  - indéfini (`un`, `tout`, `rien`, `chacun`, `aucun`, `l'un`, `l'autre`, `un autre`, `un second`, `un tel`, `certains`, `d'aucuns`),
+  - relatif (`qui`, `où`, `dont`), qui se trouve utilisé dans une proposition subordonnée relative.
 
-`l'un`, `l'autre`, `un autre`, `un second` sont des pronoms composés de plusieurs mots, ce sont des locutions pronominales.
+Noter que `l'un`, `l'autre`, `un autre`, `un second`, `un tel`, `d'aucuns` sont des pronoms composés de plusieurs mots: si l'on veut être précis, ce sont des locutions pronominales ( et il n'est pas incorrect de les appeler pronoms aussi ).
 
 
 ### Le verbe
@@ -139,13 +139,14 @@ Dans l'Antiquité puis au Moyen-âge, en grammaire ( discipline alors très lié
 Aujourd'hui, l'adjectif est ainsi défini : 
 
 - 〽️ Un adjectif est variable. Le genre et le nombre sont des concepts qui peuvent faire varier un adjectif.
-- Un adjectif peut être qualificatif (il indique une qualité du nom). Sinon il est indéfini, ou possessif.
+- Un adjectif peut être qualificatif (il indique une qualité du nom). Sinon il est indéfini, ou démonstratif, ou possessif.
   - `Parmi toutes les personnes présentes, aucune figure ne m'était connue. Voici, pensais-je, un homme charmant, accompagné d'une femme, sa femme sans doute, non moins charmante.` ( présentes, connue, charmant, accompagné, charmante, sont quatre adjectifs qualificatifs, `sa` est un adjectif possessif, `toutes` et `aucune` sont deux adjectifs indéfinis )
 - Un adjectif peut, bien souvent, être le résultat d'une adjectivation : c'est à dire qu'on a la possibilité de créer des adjectifs en adjectivant des verbes ou des noms ( on a vu qu'on peut aussi créer des noms en substantivant des adjectifs )
   - dans l'exemple plus haut, `présentes`, `connue`, `charmant`, `accompagné` sont des adjectifs qualificatifs, mais l'on voit bien qu'ils sont issus de verbes au participe présent ou passé. Ce sont des verbes adjectivés.
   - `Ce type a l'air abruti, et si j'osais m'exprimer vulgairement, je vous dirais qu'il est con.` ( abruti est un participe adjectivé, con est un nom adjectivé ) 
   - `Mon chat a souvent l'air surpris, le moindre imprévu l'étonne, et on le trouve généralement très fuyant.` ( surpris, fuyant sont deux adjectifs tirés de verbes. Moindre est un adjectif )
 
+Il faut bien se rappeler qu'il existe de nombreux adjectifs indéfinis : tout, aucun, chaque, quelconque, certain, quelque. 
 
 
 ### L'adverbe
