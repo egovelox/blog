@@ -27,6 +27,8 @@ Il faudra parfois, dans l'analyse qui décompose la phrase, ne pas prendre chaqu
 
 On appelle ces mots groupés des `locutions`. On cherchera alors la nature de la locution, plutôt que la nature de chaque mot qui compose cette locution.
 
+
+
 ## Nature des mots
 
 La nature d'un mot, c'est son espèce.
@@ -40,6 +42,8 @@ On peut recenser 7 natures distinctes :
 > nom - pronom - verbe - adjectif - adverbe - préposition - conjonction - article
 
 ( 8 si on ajoute les interjections, `Ah `, `Eh zut !`, `Oh mince !`, 'ô puissance du verbe' )
+
+
 
 ### Le nom
 
@@ -55,6 +59,8 @@ On peut recenser 7 natures distinctes :
   - un cinquième exemple: `Il faudrait dans ce cas peser le pour et le contre` ( deux prépositions substantivées )
   - un dernier la route: `Chez les Anciens, la grammaire est véritablement considérée comme une science. Chez les Modernes aussi, mais c'est une science moins célèbre, par ses effets, que les mathématiques.` ( dans cette phrase, trois adjectifs sont sont substantivés : ancien, moderne, mathématique )
 
+
+
 ### Le pronom
 
 - 〽️ Un pronom est variable. Le genre et le nombre sont des concepts qui peuvent faire varier un pronom.
@@ -64,8 +70,11 @@ On peut recenser 7 natures distinctes :
   - possessif ( `le mien` = `mon revenu` ),
   - interrogatif ( `qui ... ?` = `quelle personne ... ?`),
   - démonstratif ( `ce`, `ceci`, `celui-ci` ),
-  - indéfini (`tout`, `rien`, `chacun`, `aucun`),
+  - indéfini (`tout`, `rien`, `chacun`, `aucun`, `l'un`, `l'autre`, `un autre`, `un second`),
   - relatif (`qui`, `où`, `dont`)
+
+`l'un`, `l'autre`, `un autre`, `un second` sont des pronoms composés de plusieurs mots, ce sont des locutions pronominales.
+
 
 ### Le verbe
 
@@ -99,6 +108,8 @@ Cela sera très utile, ensuite, pour l'analyse grammaticale qui s'occupe des fon
   - `J'entendais les oiseaux chanter` entendais est ici transitif avec COD les oiseaux, chanter transitif mais employé comme intransitif.
   - `J'entendais l'oiseau chanter son envoûtante mélodie` entendais est ici transitif, chanter transitif.
 
+
+
 ### L'adjectif
 
 Adjectif est un mot latin à l'origine ( c'est un adjectif d'ailleurs ) qui signifie `qui peut se trouver à côté de, pour compléter quelque chose`( même famille que objectif, subjectif, bijectif, etc).
@@ -117,6 +128,8 @@ Aujourd'hui, l'adjectif est ainsi défini :
   - `Ce type a l'air abruti, et si j'osais m'exprimer vulgairement, je vous dirais qu'il est con.` ( abruti est un participe adjectivé, con est un nom adjectivé ) 
   - `Mon chat a souvent l'air surpris, le moindre imprévu l'étonne, et on le trouve généralement très fuyant.` ( surpris, fuyant sont deux adjectifs tirés de verbes. Moindre est un adjectif )
 
+
+
 ### L'adverbe
 
 - 〽️ Un adverbe est invariable. Le genre et le nombre sont des concepts qui ne peuvent pas faire varier un adverbe.
@@ -130,12 +143,33 @@ Aujourd'hui, l'adjectif est ainsi défini :
 >- On doit pouvoir facilement identifier une locution adverbiale, en testant de la remplacer par un adverbe en un mot ( choisir un adverbe qui se termine par `-ment` )
 
 
+
 ### La préposition
+
+〽️ Une préposition est invariable. Le genre et le nombre sont des concepts qui ne peuvent pas faire varier une préposition.
+
+La préposition ne peut exister seule, elle vient toujours accompagner (en le précédant) un nom ( ou un groupe nominal, c'est-à-dire un groupe de mots centré autour d'un nom ) ou un verbe à l'infinitif.
+
+La préposition, comme l'adverbe, peut être en un seul mot ou en plusieurs ( locution prépositionnelle ).
+
+Exemples de prépositions: `à`, `de`, `par`, `dans`, `en`, `avec`, `sauf`, `parmi`, `hormis`, etc.
+
+Exemples de locutions prépositionnelles: `à l'aide de`, `sauf à`, `en qualité de`, etc.
+
+
 
 ### La conjonction
 
+〽️ Une conjonction est invariable. Le genre et le nombre sont des concepts qui ne peuvent pas faire varier une conjonction.
+
+`mais - ou - et - donc - or - ni - car`
+
 ### L'article
 
+- 〽️ Un article est variable. Le genre et le nombre sont des concepts qui ne peuvent pas faire varier un article.
+- Un article est défini ou indéfini
+- Un article précéde toujours un nom, c'est bon à savoir pour distinguer l'article et le pronom.
+  - `Comptons une à une ses médailles : ce champion en avait déjà une, il vient d'en remporter une autre. Il gagnera encore une victoire demain.` Seul les deux dernières occurences de `une` sont des articles, 
 
 ## Fonctions ( rôles ) des mots ( ou des groupes de mots ) dans une phrase.
 
