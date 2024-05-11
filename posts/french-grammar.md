@@ -196,7 +196,7 @@ Exemples de locutions prépositionnelles: `à l'aide de`, `sauf à`, `en qualit�
   - `les sciences` se compose d'un article féminin pluriel.
 - Un article est défini ou indéfini
 - Un article précéde toujours un nom, c'est bon à savoir pour distinguer l'article et le pronom.
-  - `Comptons une à une ses médailles : ce champion en avait déjà une, il vient d'en remporter une autre. Il gagnera encore une victoire demain.` Seule la dernière occurence de "une" est vraiment un article, qui précède le nom "victoire". Dans "une autre", "une" est bien un article aussi qui précède le nom (adjectif substantivé) "autre", mais en fait on analysera plutôt `une autre` comme un pronom indéfini. Enfin, dans "déjà une", "une" est un pronom indéfini, et dans "une à une", c'est aussi le pronom indéfini, mais en fait on analysera cela comme une locution adverbiale, 
+  - `Comptons une à une ses médailles : ce champion en avait déjà une, il vient d'en remporter une autre. Il remportera sans doute encore une victoire demain.` Seule la dernière occurence de "une" est vraiment un article, qui précède le nom "victoire". Dans "une autre", "une" est bien un article aussi qui précède le nom (adjectif substantivé) "autre", mais en fait on analysera plutôt `une autre` comme un pronom indéfini. Dans "déjà une", "une" est un pronom indéfini. Enfin dans "une à une", "une" est aussi un pronom indéfini, mais en fait on analysera "une à une" comme une locution adverbiale, 
 
 
 
