@@ -82,19 +82,21 @@ On peut recenser 7 natures distinctes :
 
 ### Le verbe
 
-Le verbe est certainement, parmi les sept natures de mot, la nature la plus difficile, car la plus variable.
+Le verbe est certainement, parmi les sept natures de mot, la nature la plus difficile.
 
-De plus, un verbe est soit **transitif** (transitif direct ou transitif indirect), soit **intransitif**, et pour le savoir, cela exige de pratiquer une certaine logique grammaticale.
+Un verbe est soit **transitif** (transitif direct ou transitif indirect), soit **intransitif**, et pour le savoir, cela exige de pratiquer une certaine logique grammaticale.
 
-Exemples de verbes intransitifs : courir, marcher, voler, freiner (parfois intransitif, parfois transifif), grogner, grincer, siffler (parfois intransitif, parfois transitif), etc.
+De nombreux verbes peuvent ont cette possibilité d'être employés tantôt transitivement ( avec complément d'objet - direct ou indirect), tantôt intransitivement ( sans aucun complément d'objet ).
+
+Exemples de verbes intransitifs : courir, marcher, voler, freiner (parfois employé comme intransitif, parfois comme transifif), grogner, grincer, siffler (parfois intransitif, parfois transitif), etc.
 
 Exemples de verbes transitifs directs : percer, trouver, finir. 
 
 Exemples de verbes transitifs indirects : jouer, plaire, ressembler.
 
-Cela sera très utile, ensuite, pour l'analyse grammaticale qui s'occupe des fonctions ( pour identifier le complément d'objet, direct ou indirect )
+Cela sera très utile de savoir si un verbe, dans tel ou tel cas, est employé de manière transitive ou intransitive : cela permettra d'identifier l'éventuel complément d'objet, direct ou indirect, et ainsi de bien savoir appliquer les règles d'accord du participe passé.
 
-Enfin, il faut étudier et savoir reconnaître un verbe pronominal ( synonyme de verbe réfléchi ), par exemple `s'appeler`, `se confier`.
+Enfin, il faut connaître et savoir reconnaître un verbe pronominal ( synonyme de verbe réfléchi ), par exemple `s'appeler`, `se confier`.
 
 - 〽️ Un verbe est hautement variable. La voix, le mode, le temps, la personne , sont des concepts qui peuvent faire varier un verbe.
   - par exemple, `Cela me plait beaucoup.`, ce verbe est à la `voix active` à la `troisième personne` du `présent` de `l'indicatif`.
@@ -115,12 +117,12 @@ Enfin, il faut étudier et savoir reconnaître un verbe pronominal ( synonyme de
   - `jouer` est selon le sens, parfois transitif indirect, car on ne peut concevoir de jouer sans jouer à quelque chose, sans s'adonner à un jeu. Parfois transitif direct, selon le sens, car on peut concevoir de jouer quelque chose, un objet, son argent, sa vie, etc. Parfois intransitif, avec un sens différent ( le jeu existant entre deux composants mécaniques ).
   - `Il jouait à la balle` "jouait" est transitif indirect avec COI "à la balle".
   - `Il jouait avec le ballon` "jouait" est transitif indirect avec COI "avec le ballon". On peut aussi imaginer que le ballon n'est pas le jeu auquel il joue, mais plutôt un moyen, un instrument du jeu. Alors on dira que "jouait" est employé sans complément d'objet, donc de manière intransitive, et que "avec le ballon" est un complément prépositionnel de moyen.
-  - `Je jouai des coudes au milieu de la foule` "jouai" est intransitif, et complément prépositionnel "des coudes" = "de mes coudes".
+  - `Je jouai des coudes au milieu de la foule` "jouai" est intransitif, et complément prépositionnel de moyen "des coudes" = "avec mes coudes".
   - `Le verrou était bloqué, le pêne ne jouait pas dans sa gâche.` "jouait" est intransitif, complément prépositionnel "dans sa gâche".
   - `Je jouai ma fortune sur un pari` "jouai", dans ce sens, est transitif direct, COD ma fortune.
   - `Il se jouait de sa mauvaise fortune, avoir tout perdu lui était de peu d'importance` "jouait" ne s'analyse pas seul, car il s'agit du verbe "se jouer" qui est un verbe pronominal, transitif indirect ( car on ne peut se jouer sans se jouer de quelque chose ) avec COI "de ma fortune".
 
-  - `La nouvelle fit chanter mon ami de bonheur` "fit" est transitif direct avec COD "chanter", "chanter" est transitif direct (on ne peut concevoir de chanter, sans chanter quelque chose ) mais ici employé sans complément d'objet, on ne précise pas ce qui est chanté par mon ami : on dit que c'est un emploi intransitif du verbe chanter.
+  - `La nouvelle fit chanter mon ami de bonheur` "fit" est transitif direct avec COD "chanter mon ami de bonheur", "chanter" est généralement transitif direct (on ne peut concevoir de chanter, sans chanter quelque chose ) mais ici est employé sans complément d'objet, car on ne précise pas ce qui est chanté par mon ami : on dit que c'est un emploi intransitif du verbe transitif chanter.
   - `J'entendais les oiseaux chanter` "entendais" est ici transitif direct avec COD les oiseaux, chanter est un verbe transitif mais ici employé sans complément d'objet: on dit que c'est un emploi intransitif du verbe chanter.
   - `J'entendais l'oiseau chanter son envoûtante mélodie` entendais est ici transitif direct avec COD "l'oiseau", chanter transitif direct avec COD "son envoûtante mélodie".
 
