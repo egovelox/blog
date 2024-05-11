@@ -126,11 +126,7 @@ Aujourd'hui, l'adjectif est ainsi défini :
 >- On doit pouvoir facilement identifier une locution adverbiale, en testant de la remplacer par un adverbe en un mot ( choisir un adverbe qui se termine par `-ment` )
 
 
-
-
-
 ### La préposition
-
 
 ### La conjonction
 
@@ -141,4 +137,4 @@ Aujourd'hui, l'adjectif est ainsi défini :
 
 Une fois qu'on sait bien reconnaître la nature de tous les mots d'une phrase, on peut passer au second niveau de l'analyse grammaticale : on peut décomposer la phrase en éléments logiques.
 
-> propositions, verbe d'une proposition, sujet d'un verbe, compléments
+> propositions, verbe d'une proposition, sujet d'un verbe, compléments ( complément du nom, complément d'objet - direct ou indirect, complément circonstanciel )
