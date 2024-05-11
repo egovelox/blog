@@ -1,5 +1,5 @@
 ---
-title: "French grammar"
+title: "Eléments de grammaire française"
 description: "traditional post"
 date: "2024-05-11"
 public: true
