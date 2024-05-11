@@ -57,7 +57,7 @@ On peut recenser 7 natures distinctes :
   - un troisième exemple: `Le plaignant n'a déclaré pas ses revenus aux impôts.` ( un verbe substantivé, et un second verbe substantivé )
   - un quatrième exemple: `Le résultat du référendum fut un non massif` ( non est normalement un adverbe - de négation, ici c'est un nom, on le voit bien puisqu'il est précédé d'un article )
   - un cinquième exemple: `Il faudrait dans ce cas peser le pour et le contre` ( deux prépositions substantivées )
-  - un dernier pour la route: `Chez les Anciens, la grammaire est véritablement considérée comme une science. Chez les Modernes aussi, mais c'est une science moins célèbre, par ses effets, que les mathématiques.` ( dans cette phrase, trois adjectifs sont sont substantivés : ancien, moderne, mathématique )
+  - un dernier pour la route: `Chez les Anciens, la grammaire est véritablement considérée comme une science. Chez les Modernes aussi, mais c'est une science moins célèbre, par ses effets, que les mathématiques.` ( dans cette phrase, trois adjectifs sont substantivés : ancien, moderne, mathématique )
 
 
 
