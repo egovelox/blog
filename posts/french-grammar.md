@@ -101,7 +101,7 @@ Cela sera très utile, ensuite, pour l'analyse grammaticale qui s'occupe des fon
 
 ### L'adjectif
 
-Adjectif est mot latin à l'origine ( c'est un adjectif d'ailleurs ) qui signifie `qui peut se trouver à côté de, pour compléter quelque chose`( même famille que objectif, subjectif, bijectif, etc).
+Adjectif est un mot latin à l'origine ( c'est un adjectif d'ailleurs ) qui signifie `qui peut se trouver à côté de, pour compléter quelque chose`( même famille que objectif, subjectif, bijectif, etc).
 
 Dans l'Antiquité puis au Moyen-âge, en grammaire ( discipline alors très liée à la philosophie ), certains penseurs distinguaient deux notions opposées :
 - substantif: se dit du nom, car le nom est ce qui existe par soi-même.
