@@ -35,14 +35,15 @@ Savoir reconnaître la nature d'un mot, c'est exactement comme savoir reconnaît
 - Cet animal que j'ai aperçu sur mon chemin tout à l'heure, c'est un chat.
 - Ce mot que j'ai lu dans cette phrase tout à l'heure, c'est un adjectif. 
 
-On peut recenser sept natures distinctes :
+On peut recenser 7 natures distinctes :
 
 > nom - pronom - verbe - adjectif - adverbe - préposition - conjonction - article
 
-( 8 si on ajoute les interjections, `Ah `, `Eh zut !`, `Oh mince !`, 'ô'
+( 8 si on ajoute les interjections, `Ah `, `Eh zut !`, `Oh mince !`, 'ô puissance du verbe' )
 
-### Le nom ( ou substantif, synonyme à connaître )
+### Le nom
 
+- `un nom commun` a pour synonyme `un substantif`.
 - 〽️ Un nom est variable. Le genre et le nombre sont des concepts qui peuvent faire varier un nom.
 - Un nom peut être commun ou propre. 
   - Un nom commun peut être précédé d'un article, défini ou indéfini.
@@ -61,7 +62,7 @@ On peut recenser sept natures distinctes :
 - Un pronom peut être
   - personnel ( `je` = `La personne qui vous parle`, `toi` ) , 
   - possessif ( `le mien` = `mon revenu` ),
-  - interrogatif ( `qui` = `quelle personne` ),
+  - interrogatif ( `qui ... ?` = `quelle personne ... ?`),
   - démonstratif ( `ce`, `ceci`, `celui-ci` ),
   - indéfini (`tout`, `rien`, `chacun`, `aucun`),
   - relatif (`qui`, `où`, `dont`)
@@ -110,7 +111,7 @@ Aujourd'hui, l'adjectif est ainsi défini :
 
 - 〽️ Un adjectif est variable. Le genre et le nombre sont des concepts qui peuvent faire varier un adjectif.
 - Un adjectif peut être qualificatif (il indique une qualité du nom). Sinon il est indéfini, ou possessif.
-  - `Parmi toutes les personnes présentes, aucune figure ne m'était connue. Voici, pensais-je, un homme charmant, accompagné d'une femme, sa femme sans doute, non moins charmante.` ( présentes, connue, charmant, accompagné, charmante, sont quatre adjectifs qualificatifs, `sa` est un adjectif possessif, `toutes` et `aucunes` sont deux adjectifs indéfinis )
+  - `Parmi toutes les personnes présentes, aucune figure ne m'était connue. Voici, pensais-je, un homme charmant, accompagné d'une femme, sa femme sans doute, non moins charmante.` ( présentes, connue, charmant, accompagné, charmante, sont quatre adjectifs qualificatifs, `sa` est un adjectif possessif, `toutes` et `aucune` sont deux adjectifs indéfinis )
 - Un adjectif peut, bien souvent, être le résultat d'une adjectivation : c'est à dire qu'on a la possibilité de créer des adjectifs en adjectivant des verbes ou des noms ( on a vu qu'on peut aussi créer des noms en substantivant des adjectifs )
   - dans l'exemple plus haut, `présentes`, `connue`, `charmant`, `accompagné` sont des adjectifs qualificatifs, mais l'on voit bien qu'ils sont issus de verbes au participe présent ou passé. Ce sont des verbes adjectivés.
   - `Ce type a l'air abruti, et si j'osais m'exprimer vulgairement, je vous dirais qu'il est con.` ( abruti est un participe adjectivé, con est un nom adjectivé ) 
@@ -119,6 +120,9 @@ Aujourd'hui, l'adjectif est ainsi défini :
 ### L'adverbe
 
 - 〽️ Un adverbe est invariable. Le genre et le nombre sont des concepts qui ne peuvent pas faire varier un adverbe.
+- On distingue les adverbes et les adverbes interrogatifs
+  - `Comment vous croire sincèrement ?` "comment" est adverbe interrogatif de manière, "sincèrement" est adverbe de manière.
+  - `Combien voulez-vous en tout ?` "combien" est adverbe interrogatif de quantité, "en tout" est locution adverbiale.
 
 > Adverbe et locutions adverbiales :
 >- Un mot peut être un adverbe (`absolument`, `pas`, `oui`). 
