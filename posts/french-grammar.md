@@ -41,7 +41,7 @@ On peut recenser 7 natures distinctes :
 
 > nom - pronom - verbe - adjectif - adverbe - préposition - conjonction - article
 
-( 8 si on ajoute les interjections, `Ah `, `Eh zut !`, `Oh mince !`, 'ô puissance du verbe' )
+( 8 si on ajoute les interjections, `Ah `, `Eh zut !`, `Oh mince !`, `ô puissance du verbe` )
 
 
 
