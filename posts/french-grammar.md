@@ -47,12 +47,16 @@ On peut recenser 7 natures distinctes :
 
 ### Le nom
 
-- `un nom commun` a pour synonyme `un substantif`.
-- 〽️ Un nom est variable. Le genre et le nombre sont des concepts qui peuvent faire varier un nom.
-- Un nom peut être commun ou propre. 
-  - Un nom commun peut être précédé d'un article, défini ou indéfini.
+- Un nom peut être `commun` ou `propre`. 
+- 〽️ Un nom commun est variable. Le genre et le nombre sont des concepts qui peuvent faire varier un nom commun.
+  - un candidat, une candidate, des candidats, des candidates.
+  - un cheval, des chevaux.
+- Un nom propre est invariable, sauf les noms de peuples, de groupes humains et d'habitants.
+  - Parmi les jeunes Parisien`s`, pensez-vous qu'il existe de nombreux petit`s` `Macron` ?
+- Un nom commun s'appelle aussi un `substantif`.
+  - Un nom peut être précédé d'un article, défini ou indéfini. C'est la seule place où un article peut être employé.
 - Un nom, bien souvent, peut être emprunté à une autre nature : c'est la substantivation qui permet cela. Par exemple, un adjectif substantivé, c'est un adjectif qu'on a transformé en nom. Il faut bien l'avoir à l'esprit, car la substantivation est très courante en français.
-  - un premier exemple: `Le commerçant a fourni au client un reçu.`  ( un verbe substantivé, et un autre verbe substantivé )
+  - un premier exemple: `Le commerçant a fourni au client un reçu.`  ( "commerçant" est un nom obtenu à partir d'un verbe substantivé - au participe présent, et "reçu" est un nom obtenu à partir d'un autre verbe substantivé - au participe passé. )
   - un second exemple: `Le rire est le propre de l'homme.` ( un verbe substantivé, et un adjectif substantivé )
   - un troisième exemple: `Le plaignant n'a déclaré pas ses revenus aux impôts.` ( un verbe substantivé, et un second verbe substantivé )
   - un quatrième exemple: `Le résultat du référendum fut un non massif` ( non est normalement un adverbe - de négation, ici c'est un nom, on le voit bien puisqu'il est précédé d'un article )
@@ -66,10 +70,10 @@ On peut recenser 7 natures distinctes :
 - 〽️ Un pronom est variable. Le genre et le nombre sont des concepts qui peuvent faire varier un pronom.
 - Un pronom fait toujours référence à un nom ( le nom qui est visé est parfois présent, parfois absent de la phrase ).
 - Un pronom peut être
-  - personnel ( `je` = `La personne qui vous parle`, `toi` ) , 
-  - possessif ( `le mien` = `mon revenu` ),
-  - interrogatif ( `qui ... ?` = `quelle personne ... ?`),
-  - démonstratif ( `ce`, `ceci`, `celui-ci` ),
+  - personnel ( `je` = La personne qui vous parle, `toi` ) , 
+  - possessif ( `le mien`, `les nôtres` ),
+  - interrogatif ( `qui ... ?` = quelle personne ... ?),
+  - démonstratif ( `ce`, `ceci`, `celui-ci`, `ceux-là` ),
   - indéfini (`tout`, `rien`, `chacun`, `aucun`, `l'un`, `l'autre`, `un autre`, `un second`),
   - relatif (`qui`, `où`, `dont`)
 
@@ -80,9 +84,9 @@ On peut recenser 7 natures distinctes :
 
 Le verbe est certainement, parmi les sept natures de mot, la nature la plus difficile, car la plus variable.
 
-De plus, un verbe est soit transitif (transitif direct ou transitif indirect), soit intransitif, et pour le savoir, cela exige de pratiquer une certaine logique grammaticale.
+De plus, un verbe est soit **transitif** (transitif direct ou transitif indirect), soit **intransitif**, et pour le savoir, cela exige de pratiquer une certaine logique grammaticale.
 
-Exemples de verbes intransitifs : courir, marcher, voler, freiner (parfois intransitif, parfois transifif), grogner, grincer, etc.
+Exemples de verbes intransitifs : courir, marcher, voler, freiner (parfois intransitif, parfois transifif), grogner, grincer, siffler (parfois intransitif, parfois transitif), etc.
 
 Exemples de verbes transitifs directs : percer, trouver, finir. 
 
@@ -92,10 +96,11 @@ Cela sera très utile, ensuite, pour l'analyse grammaticale qui s'occupe des fon
 
 Enfin, il faut étudier et savoir reconnaître un verbe pronominal ( synonyme de verbe réfléchi ), par exemple `s'appeler`, `se confier`.
 
-- 〽️ Un verbe est hautement variable. La voix, le mode, le temps, la personne ( par exemple, `Tu me plais.`, ce verbe est à la `voix active` à la `deuxième personne` du `présent` de `l'indicatif` ), sont des concepts qui peuvent faire varier un verbe.
+- 〽️ Un verbe est hautement variable. La voix, le mode, le temps, la personne , sont des concepts qui peuvent faire varier un verbe.
+  - par exemple, `Cela me plait beaucoup.`, ce verbe est à la `voix active` à la `troisième personne` du `présent` de `l'indicatif`.
 - évidemment, il est d'abord utile de bien connaître les modes qu'offre la langue française : participe, infinitif, indicatif, impératif, subjonctif, conditionnel.
 - idem pour les temps disponibles dans chaque mode.
-- il est utile de savoir tourner à la voix passive, un verbe à la voix active, et réciproquement.
+- il est utile de savoir mettre à la voix passive un verbe qu'on trouve à la voix active ( noter que cela n'est possible que pour les verbes transitifs directs, donc c'est un test utile ). Ou l'inverse, mettre à la voix active un verbe qu'on trouve à la voix passive.
 - un verbe peut souvent être substantivé ( on le change en un nom ), ou adjectivé ( on le change en un adjectif ). Alors on peut reconnaître la forme d'un verbe, mais à cause de la substantivation ( ou de l'adjectivation ) le mot a perdu sa nature de verbe: il est devenu un nom ( ou un adjectif ).
   - un exemple : ` Le revenu de nos salariés nous permet de récompenser un travail contraignant.` ( revenir, salarier - au participe passé - sont substantivés, et contraindre - au participe présent - est adjectivé )
 
@@ -109,14 +114,14 @@ Enfin, il faut étudier et savoir reconnaître un verbe pronominal ( synonyme de
   - `Le champion a couru son cent mètres en quelques secondes.` courir est employé comme verbe transitif direct avec COD "son cent mètres". On voit bien que la tournure passive `Le cent mètres a été couru en quelques secondes par le champion` est possible, quoique assez bizarre.
   - `jouer` est selon le sens, parfois transitif indirect, car on ne peut concevoir de jouer sans jouer à quelque chose, sans s'adonner à un jeu. Parfois transitif direct, selon le sens, car on peut concevoir de jouer quelque chose, un objet, son argent, sa vie, etc. Parfois intransitif, avec un sens différent ( le jeu existant entre deux composants mécaniques ).
   - `Il jouait à la balle` "jouait" est transitif indirect avec COI "à la balle".
-  - `Il jouait avec le ballon` "jouait" est transitif indirect avec COI "avec le ballon".
+  - `Il jouait avec le ballon` "jouait" est transitif indirect avec COI "avec le ballon". On peut aussi imaginer que le ballon n'est pas le jeu auquel il joue, mais plutôt un moyen, un instrument du jeu. Alors on dira que "jouait" est employé sans complément d'objet, donc de manière intransitive, et que "avec le ballon" est un complément prépositionnel de moyen.
   - `Je jouai des coudes au milieu de la foule` "jouai" est intransitif, et complément prépositionnel "des coudes" = "de mes coudes".
   - `Le verrou était bloqué, le pêne ne jouait pas dans sa gâche.` "jouait" est intransitif, complément prépositionnel "dans sa gâche".
   - `Je jouai ma fortune sur un pari` "jouai", dans ce sens, est transitif direct, COD ma fortune.
-  - `Il se jouait de sa mauvaise fortune, avoir tout perdu lui était de peu d'importance` "jouait" ne s'analyse pas seul, car il s'agit du verbe "se jouer" qui est un verbe pronominal, transitif indirect, car on ne peut se jouer sans se jouer de quelque chose.
+  - `Il se jouait de sa mauvaise fortune, avoir tout perdu lui était de peu d'importance` "jouait" ne s'analyse pas seul, car il s'agit du verbe "se jouer" qui est un verbe pronominal, transitif indirect ( car on ne peut se jouer sans se jouer de quelque chose ) avec COI "de ma fortune".
 
-  - `La nouvelle fit chanter mon ami de bonheur` "fit" est transitif direct avec COD "chanter", "chanter" est transitif direct (on ne peut concevoir de chanter, sans chanter quelque chose ) mais ici employé sans complément d'objet, on ne précise pas ce qui est chanté par mon ami.
-  - `J'entendais les oiseaux chanter` "entendais" est ici transitif direct avec COD les oiseaux, chanter transitif mais employé sans complément d'objet.
+  - `La nouvelle fit chanter mon ami de bonheur` "fit" est transitif direct avec COD "chanter", "chanter" est transitif direct (on ne peut concevoir de chanter, sans chanter quelque chose ) mais ici employé sans complément d'objet, on ne précise pas ce qui est chanté par mon ami : on dit que c'est un emploi intransitif du verbe chanter.
+  - `J'entendais les oiseaux chanter` "entendais" est ici transitif direct avec COD les oiseaux, chanter est un verbe transitif mais ici employé sans complément d'objet: on dit que c'est un emploi intransitif du verbe chanter.
   - `J'entendais l'oiseau chanter son envoûtante mélodie` entendais est ici transitif direct avec COD "l'oiseau", chanter transitif direct avec COD "son envoûtante mélodie".
 
 
