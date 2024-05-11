@@ -30,16 +30,16 @@ Il y a en fait 2 niveaux d'analyse :
 
 ### Le nom ( ou substantif, synonyme à connaître )
 
-- Le genre et le nombre sont des concepts qui peuvent faire varier un nom.
-- Un nom peut être commun ou propre.
-- Un nom peut être emprunté à une autre nature : c'est la substantivation qui permet cela. Un adjectif substantivé, c'est un adjectif qu'on a transformé en nom. 
-  - Voici deux exemples : 
-    `Le commercant a fourni au client un recu.` 
-    `Le rire est le propre de l'homme.`
+- 〽️ Le genre et le nombre sont des concepts qui peuvent faire varier un nom.
+- Un nom peut être commun ou propre. 
+  - Le nom commun peut être précédé d'un article, défini ou indéfini.
+- Un nom, bien souvent, peut être emprunté à une autre nature : c'est la substantivation qui permet cela. Par exemple, un adjectif substantivé, c'est un adjectif qu'on a transformé en nom. 
+  - un premier exemple : `Le commerçant a fourni au client un reçu.`  ( on a substantivé un verbe, et un autre verbe )
+  - un second exemple  `Le rire est le propre de l'homme.` ( on a substantivé un verbe, et un adjectif )
 
 ### Le pronom
 
-- Le genre et le nombre sont des concepts qui peuvent faire varier un pronom.
+- 〽️ Le genre et le nombre sont des concepts qui peuvent faire varier un pronom.
 - Un pronom fait toujours référence à un nom ( le nom est parfois présent, parfois absent de la phrase ).
 - Un pronom peut être
   - personnel ( `je`, `toi` ) , 
