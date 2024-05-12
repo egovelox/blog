@@ -23,11 +23,17 @@ Il y a en fait deux niveaux d'analyse :
 
 - ensuite retrouver **la fonction** ( le rôle, par exemple "sujet", "complément d'objet direct", etc ) que joue chaque mot au sein de la phrase. Pour cela on utilise sa propre logique, et on se facilite beaucoup la tâche en connaissant bien la nature des mots. 
 
-Il faudra parfois, dans l'analyse qui décompose la phrase, ne pas prendre chaque mot pour une unité, mais plutôt grouper des mots ensemble, et trouver la nature de ces groupes de mots. 
+Ajoutons ici une remarque pour expliquer ce qu'est une `locution`: 
 
-On appelle ces mots groupés des `locutions`. On cherchera alors la nature de la locution (locution verbale, ou adverbiale, ou prépositionnelle, etc), plutôt que la nature de chaque mot qui compose cette locution.
+Certains mots, quand ils sont groupés ensemble, forment naturellement, en quelque sorte, un seul mot. Ces mots qui existent groupés ensemble pour former comme un seul mot, c'est ce qu'on appelle une `locution`. 
 
+Ainsi on pourra parfois, dans l'analyse qui décompose la phrase pour trouver la nature des mots, ne pas prendre chaque mot pour une unité, mais plutôt laisser plusieurs mots groupés ensemble, et trouver la nature de ce groupe de mots. Mieux vaut trouver la nature de la locution (locution verbale, ou adverbiale, ou prépositionnelle, etc), plutôt que la nature de chaque mot qui compose cette locution.
 
+Voici un exemple : `L'attaquant a marqué grâce à une passe de son gardien.` Si vous analysez "grâce à" en deux mots, vous aurez fait une décomposition trop poussée ( `grâce` nom, `à` préposition ). Mieux vaudra reconnaître que `grâce à` est une locution prépositionnelle, c'est à dire un groupe de mot très courant, qui peut être assimilé à une simple préposition.
+
+Voici un second exemple : `Auriez-vous un plombier à me recommander, par hasard ?` Si on décompose à fond cette phrase, mot par mot, alors "par" est une préposition, et "hasard" est un nom. Mais on peut aussi s'épargner de faire cette décomposition au mot par mot, et dire plutôt que "par hasard" est une locution adverbiale, c'est à dire comme un seul mot qui serait un adverbe. "Par hasard" est si couramment utilisé, que c'en est quasiment devenu un mot de la langue. C'est précisément cela, une locution : un groupe de mots si couramment utilisé, qu'on l'analyse comme un seul mot.
+
+La langue française contient des centaines de locutions qu'il serait vain de vouloir décomposer : l'analyse perdrait beaucoup de sa pertinence.
 
 ## Nature des mots
 
