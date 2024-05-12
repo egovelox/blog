@@ -13,19 +13,19 @@ Cette page est un mémo permettant d'apprendre les bases de l'analyse grammatica
 
 Analyser, c'est décomposer ( c'est même le sens d'origine, venu du grec ancien ). 
 
-Savoir analyser grammaticalement une phrase, c'est savoir trouver les composants.
+Savoir analyser grammaticalement une phrase, c'est savoir en trouver les composants.
 
-Il y a en fait 2 niveaux d'analyse : 
+Il y a en fait deux niveaux d'analyse : 
 
-- d'abord retrouver la nature de chaque mot de la phrase. 
-  - On doit connaître les différentes natures possibles ( il y en a 7 )
-  - Pour cela on peut être aidé par un dictionnaire, qui indique toujours la ou les natures possibles d'un mot.
+- d'abord retrouver **la nature** de chaque mot de la phrase. 
+  - On doit connaître les différentes natures possibles ( il y en a 7 ou 8 )
+  - Pour cela on peut être aidé par [un dictionnaire](https://www.cnrtl.fr/definition/dictionnaire), qui indiquera toujours la ou les natures possibles d'un mot.
 
-- ensuite retrouver la fonction ( le rôle ) que joue chaque mot au sein de la phrase. Pour cela on utilise sa propre logique, et on se facilite beaucoup la tâche en connaissant bien la nature des mots. 
+- ensuite retrouver **la fonction** ( le rôle, par exemple "sujet", "complément d'objet direct", etc ) que joue chaque mot au sein de la phrase. Pour cela on utilise sa propre logique, et on se facilite beaucoup la tâche en connaissant bien la nature des mots. 
 
 Il faudra parfois, dans l'analyse qui décompose la phrase, ne pas prendre chaque mot pour une unité, mais plutôt grouper des mots ensemble, et trouver la nature de ces groupes de mots. 
 
-On appelle ces mots groupés des `locutions`. On cherchera alors la nature de la locution, plutôt que la nature de chaque mot qui compose cette locution.
+On appelle ces mots groupés des `locutions`. On cherchera alors la nature de la locution (locution verbale, ou adverbiale, ou prépositionnelle, etc), plutôt que la nature de chaque mot qui compose cette locution.
 
 
 
