@@ -58,9 +58,9 @@ On peut recenser 7 natures distinctes :
 - Un nom, bien souvent, peut être emprunté à une autre nature : c'est la substantivation qui permet cela. Par exemple, un adjectif substantivé, c'est un adjectif qu'on a transformé en nom. Il faut bien l'avoir à l'esprit, car la substantivation est très courante en français.
   - un premier exemple: `Le commerçant a fourni au client un reçu.`  ( "commerçant" est un nom obtenu à partir d'un verbe substantivé - au participe présent, et "reçu" est un nom obtenu à partir d'un autre verbe substantivé - au participe passé. )
   - un second exemple: `Le rire est le propre de l'homme.` ( un verbe substantivé, et un adjectif substantivé )
-  - un troisième exemple: `Le plaignant n'a déclaré pas ses revenus aux impôts.` ( un verbe substantivé, et un second verbe substantivé )
-  - un quatrième exemple: `Le résultat du référendum fut un non massif` ( non est normalement un adverbe - de négation, ici c'est un nom, on le voit bien puisqu'il est précédé d'un article )
-  - un cinquième exemple: `Il faudrait dans ce cas peser le pour et le contre` ( deux prépositions substantivées )
+  - un troisième exemple: `Le plaignant n'a pas déclaré ses revenus aux impôts.` ( "plaignant" est un verbe substantivé - participe présent devenu un nom, et "revenus" est un second verbe substantivé - participe passé devenu un nom. )
+  - un quatrième exemple: `Le résultat du référendum fut un non massif` ( non est normalement un adverbe - de négation, ici c'est un nom, et on le voit bien puisqu'il est précédé d'un article )
+  - un cinquième exemple: `Il faudrait dans ce cas peser le pour et le contre` ( "pour" et "contre" sont généralement deux prépositions, mais ici elles ont été substantivées, elles sont devenues des noms. )
   - un dernier pour la route: `Chez les Anciens, la grammaire est véritablement considérée comme une science. Chez les Modernes aussi, mais c'est une science moins célèbre, par ses effets, que les mathématiques.` ( dans cette phrase, trois adjectifs sont substantivés : ancien, moderne, mathématique )
 
 
