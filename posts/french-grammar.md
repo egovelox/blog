@@ -121,11 +121,9 @@ Enfin, il faut connaître et savoir reconnaître un verbe pronominal ( on l'appe
 
   - `courir` est intransitif, car on peut concevoir de courir sans dépendre d'aucun objet.
 
-  - `Il courut le plus vite qu'il put.` 
+  - `Il courut le plus vite qu'il put.` On notera qu'il est impossible de transformer le verbe courir, qui est à la voix active ("courut"), à la voix passive. Courir étant un verbe intransitif, la voix passive n'existe pas.
 
-  - `courir` est parfois employé transitivement, même si on peut concevoir de courir sans objet.
-
-  - `Le champion a couru son cent mètres en quelques secondes.` courir est employé comme verbe transitif direct avec COD "son cent mètres". On voit bien que la tournure passive `Le cent mètres a été couru en quelques secondes par le champion` est possible, quoique assez bizarre.
+  - Cependant `courir` est parfois employé transitivement : `Le champion a couru son cent mètres en quelques secondes.` "a couru" est employé ici comme verbe transitif direct avec COD "son cent mètres". On voit bien que la tournure passive `Le cent mètres a été couru en quelques secondes par le champion` est possible, quoiqu'assez maladroite ( on préférera mille fois écrire "a été parcouru", car "parcourir" est bien un véritable verbe transitif direct, qui donc existe couramment à la voix passive ).
 
   - `jouer` est selon le sens, parfois transitif indirect, car on ne peut concevoir de jouer sans jouer à quelque chose, sans s'adonner à un jeu. Parfois transitif direct, selon le sens, car on peut concevoir de jouer quelque chose, un objet, son argent, sa vie, etc. Parfois intransitif, avec un sens différent ( le jeu existant entre deux composants mécaniques ).
 
